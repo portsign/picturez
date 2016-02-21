@@ -33,5 +33,6 @@
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="/js/jquery-plugin-collection.js"></script>
 <script src="/js/custom.js"></script>
+
 </body>
 </html>

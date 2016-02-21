@@ -33,5 +33,13 @@
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="/js/jquery-plugin-collection.js"></script>
 <script src="/js/custom.js"></script>
+<script>
+$(document).ready(function () {
+	$('.material-button-toggle').click(function () {
+		$(this).toggleClass('open');
+		$('.option').toggleClass('scale-on');
+	});
+});
+</script>
 </body>
 </html>

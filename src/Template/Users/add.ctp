@@ -15,6 +15,7 @@
 			            echo $this->Form->input('status', ['class' => 'form-control', 'value' => 'not_verified', 'type' => 'hidden']);
 			        ?>
 			    </fieldset>
+				<a href="/users/social/Facebook">Facebook<a>
 			    <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-default distance-button']) ?>
 			    <?= $this->Form->end() ?>
 			</div>

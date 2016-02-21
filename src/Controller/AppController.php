@@ -44,7 +44,11 @@ class AppController extends Controller
         // $this->loadComponent('RequestHandler');
 		$this->loadComponent('Flash');
 	    $this->loadComponent('Auth', [
-	        'loginRedirect' => [
+			'authenticate' => [
+		        'Form',
+		        'ADmad/HybridAuth.HybridAuth'
+		    ],
+		    'loginRedirect' => [
 	            'controller' => 'Users',
 	            'action' => 'home'
 	        ],
