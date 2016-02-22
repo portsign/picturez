@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Routing\Router;
 
 /**
  * Application Controller
@@ -43,11 +44,15 @@ class AppController extends Controller
 
         // $this->loadComponent('RequestHandler');
 		$this->loadComponent('Flash');
+		$this->loadComponent('AkkaFacebook.Graph', [
+	        'app_id' => '948270651894850',
+	        'app_secret' => 'a8d009843e15003be5ca6dd8c0ed811e',
+	        'app_scope' => 'email,public_profile', // https://developers.facebook.com/docs/facebook-login/permissions/v2.4
+	        'redirect_url' => Router::url(['controller' => 'Users', 'action' => 'timeline'], TRUE), // This should be enabled by default
+	        'post_login_redirect' => '' //ie. Router::url(['controller' => 'Users', 'action' => 'account'], TRUE)
+	        // 'user_columns' => ['first_name' => 'fname', 'last_name' => 'lname', 'username' => 'uname', 'password' => 'pass'] //not required
+	    ]);
 	    $this->loadComponent('Auth', [
-			'authenticate' => [
-		        'Form',
-		        'ADmad/HybridAuth.HybridAuth'
-		    ],
 		    'loginRedirect' => [
 	            'controller' => 'Users',
 	            'action' => 'home'

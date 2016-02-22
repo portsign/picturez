@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8e78ed2ed711cdc5197ffbb152e1c615",
-    "content-hash": "1ef30c2401b1405dbbe17c2313847bdd",
+    "hash": "bd5f8f8877670dd8c66bdced6257a67d",
+    "content-hash": "ec35a52ba564be934e9e1a569c6855d7",
     "packages": [
         {
             "name": "admad/cakephp-hybridauth",
@@ -166,16 +166,16 @@
         },
         {
             "name": "cakephp/cakephp",
-            "version": "3.2.2",
+            "version": "3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "ef134e0691dd124ff4cd35747252ae1c9da77305"
+                "reference": "2c715472e57651b14538ace21b8f0de384a579cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/ef134e0691dd124ff4cd35747252ae1c9da77305",
-                "reference": "ef134e0691dd124ff4cd35747252ae1c9da77305",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/2c715472e57651b14538ace21b8f0de384a579cc",
+                "reference": "2c715472e57651b14538ace21b8f0de384a579cc",
                 "shasum": ""
             },
             "require": {
@@ -204,6 +204,9 @@
                 "cakephp/cakephp-codesniffer": "dev-master",
                 "phpunit/phpunit": "*"
             },
+            "suggest": {
+                "ext-openssl": "To use Security::encrypt() or have secure CSRF token generation."
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -231,7 +234,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-02-12 03:14:21"
+            "time": "2016-02-21 19:44:26"
         },
         {
             "name": "cakephp/chronos",
@@ -853,6 +856,54 @@
     ],
     "packages-dev": [
         {
+            "name": "akkaweb/cakephp-facebook",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akkaweb/AKKA-CakePHP-Facebook-Plugin.git",
+                "reference": "82939622cf764338c627f483d0b418823cf14901"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akkaweb/AKKA-CakePHP-Facebook-Plugin/zipball/82939622cf764338c627f483d0b418823cf14901",
+                "reference": "82939622cf764338c627f483d0b418823cf14901",
+                "shasum": ""
+            },
+            "require": {
+                "facebook/php-sdk-v4": "4.0.*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "extra": {
+                "installer-name": "AkkaFacebook"
+            },
+            "autoload": {
+                "psr-4": {
+                    "AkkaFacebook\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andre Santiago",
+                    "email": "admin@akkaweb.com"
+                }
+            ],
+            "description": "CakePHP 3 Facebook Plugin",
+            "keywords": [
+                "cakephp",
+                "cakephp3",
+                "facebook"
+            ],
+            "time": "2016-01-15 16:49:57"
+        },
+        {
             "name": "cakephp/bake",
             "version": "1.2.1",
             "source": {
@@ -986,6 +1037,55 @@
             ],
             "description": "implementation of xdg base directory specification for php",
             "time": "2014-10-24 07:27:01"
+        },
+        {
+            "name": "facebook/php-sdk-v4",
+            "version": "4.0.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
+                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/c82611e05596622c9bd7abfa1cea1512d885c95e",
+                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "~4.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facebook\\": "src/Facebook/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Facebook Platform"
+            ],
+            "authors": [
+                {
+                    "name": "Facebook",
+                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
+                }
+            ],
+            "description": "Facebook SDK for PHP",
+            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+            "keywords": [
+                "facebook",
+                "sdk"
+            ],
+            "time": "2015-04-03 20:31:47"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1177,16 +1277,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.6.1",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "0f04df0b23663799a8941fae13cd8e6299bde3ed"
+                "reference": "1573b36948a32bdaf43db525edf5e95d5a08ed06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/0f04df0b23663799a8941fae13cd8e6299bde3ed",
-                "reference": "0f04df0b23663799a8941fae13cd8e6299bde3ed",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1573b36948a32bdaf43db525edf5e95d5a08ed06",
+                "reference": "1573b36948a32bdaf43db525edf5e95d5a08ed06",
                 "shasum": ""
             },
             "require": {
@@ -1245,7 +1345,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-11-12 16:18:56"
+            "time": "2016-02-20 16:27:05"
         },
         {
             "name": "symfony/var-dumper",
@@ -1314,7 +1414,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "psy/psysh": 0
+        "psy/psysh": 0,
+        "akkaweb/cakephp-facebook": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

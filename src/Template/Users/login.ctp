@@ -16,10 +16,10 @@
 			<?= $this->Form->button(__('Login'), ['class' => 'btn btn-warning distance-button']); ?>
 			<?= $this->Form->end() ?>
 
+			<?= $this->Facebook->loginLink($options = ['label' => '<img src="/img/fb_login.png" width="200" />']); ?>
 			</div>
 		</div>
 	</div>
 </div>
 </section>
-
 <?= $this->element('footer') ?>

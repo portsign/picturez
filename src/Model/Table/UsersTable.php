@@ -2,10 +2,12 @@
 namespace App\Model\Table;
 
 use App\Model\Entity\User;
+use Cake\Event\Event;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\Entity;
 
 /**
  * Users Model
@@ -70,5 +72,9 @@ class UsersTable extends Table
     {
         $rules->add($rules->isUnique(['email']));
         return $rules;
+    }
+	public function beforeSave(Event $event, EntityInterface $entity)
+    {
+		$entity->picture = 'https://graph.facebook.com/'.$entity->facebook_id.'/picture?redirect=true&type=large';
     }
 }
