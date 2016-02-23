@@ -4,7 +4,8 @@
 <div class="container pt-0 pb-0">
 	<div class="section-content">
 	    <div class="row">
-			<div class="col-md-12"><br />
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><br />
 			<?= $this->Flash->render('error_login') ?>
 			<?= $this->Flash->render('auth') ?>
 			<?= $this->Form->create() ?>
@@ -15,9 +16,14 @@
 			    </fieldset>
 			<?= $this->Form->button(__('Login'), ['class' => 'btn btn-warning distance-button']); ?>
 			<?= $this->Form->end() ?>
-
-			<?= $this->Facebook->loginLink($options = ['label' => '<img src="/img/fb_login.png" width="200" />']); ?>
+			<hr />
+			<a href="/users/google_login"><img src="/img/gp_login.png" /></a>
+			<div class="distance-button"></div>
+			<?= $this->Facebook->loginLink($options = ['label' => '<img src="/img/fb_login.png" />']); ?>
+			<br />
+			<br />
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 	</div>
 </div>

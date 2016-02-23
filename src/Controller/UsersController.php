@@ -3,7 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
-
+use Cake\Network\Http\Client;
+use Cake\Routing\Router;
 /**
  * Users Controller
  *
@@ -15,7 +16,7 @@ class UsersController extends AppController
 	public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'success']);
+        $this->Auth->allow(['add', 'success', 'googleLogin', 'googleCallback']);
     }
 
     /**
@@ -33,17 +34,92 @@ class UsersController extends AppController
 	public function login()
     {
 		if ($this->request->is('post')) {
-			// debug($this->request->data);exit;
 	        $user = $this->Auth->identify();
 	        if ($user) {
 	            $this->Auth->setUser($user);
-	            return $this->redirect($this->Auth->redirectUrl());
+				// debug($user);exit;
+				if ($user['first_name']==null) {
+	            	return $this->redirect('/users/account');
+				} else {
+					return $this->redirect('/users/timeline');
+				}
 	        }
 			$this->Flash->error('Wrong Username or Password', [
 				'key' => 'error_login']
 			);
 	    }
     }
+
+	public function googleLogin() {
+
+	    // GoogleのOAuth設定で生成された値
+	    $client_id = '487749713247-hci8p168bpnpumkm9hk5qea8p4r6mkvc.apps.googleusercontent.com';
+
+	    // コールバックURL
+	    $callback = Router::url(['action'=>'googleCallback'], true);
+
+	    // スコープ
+	    $scopes = array(
+	        'https://www.googleapis.com/auth/userinfo.profile',
+	        'https://www.googleapis.com/auth/userinfo.email',
+	    );
+
+	    // Google+のログイン画面へリダイレクト
+	    $url = sprintf('https://accounts.google.com/o/oauth2/auth?scope=%s&redirect_uri=%s&response_type=code&client_id=%s',
+	        urlencode(implode(' ', $scopes)),
+	        urlencode($callback),
+	        $client_id
+	    );
+
+	    return $this->redirect($url);
+	}
+
+
+	/**
+	 *
+	 *  Google+ callback
+	 *
+	 */
+	public function googleCallback() {
+
+	    // GoogleのOAuth設定で生成された値
+	    $client_id = '487749713247-hci8p168bpnpumkm9hk5qea8p4r6mkvc.apps.googleusercontent.com';
+	    $client_secret = 'NyMD--BPiUSpaOpVLBL_NI6X';
+
+		// debug($callback);exit;
+	    // コールバックURL
+	    $callback = Router::url(['action'=>'googleCallback'], true);
+
+	    // URLパラメータの取得
+	    $code = $this->request->query('code');
+
+
+	    // アクセストークンを取得する
+	    $http = new Client();
+	    $response = $http->post('https://accounts.google.com/o/oauth2/token', [
+	        'code' => $code,
+	        'client_id' => $client_id,
+	        'client_secret' => $client_secret,
+	        'redirect_uri' => $callback,
+	        'grant_type' => 'authorization_code'
+	    ]);
+	    $json_token = json_decode($response->body);
+	    $access_token = $json_token->access_token;
+
+	    // ユーザ情報の取得
+	    $http = new Client();
+	    $response = $http->get('https://www.googleapis.com/oauth2/v1/userinfo', [
+	        'access_token' => $access_token
+	    ]);
+
+	    $user = json_decode($response->body);
+		debug($user);exit;
+	    // $userにユーザIDやメールアドレスが設定されている
+	    // $user->id
+	    // $user->email
+
+	}
+
 	public function logout()
 	{
 	    return $this->redirect($this->Auth->logout());
@@ -60,7 +136,10 @@ class UsersController extends AppController
     {
 
     }
+	public function account()
+    {
 
+    }
     public function view($id = null)
     {
         $user = $this->Users->get($id, [

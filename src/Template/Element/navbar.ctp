@@ -30,7 +30,7 @@
 				  <li class="dropdown"> <a href="/recent" class="dropdown-toggle">Recent</a></li>
 				  <li class="dropdown"> <a href="/hot" class="dropdown-toggle">Hot</a></li>
 				  <li class="dropdown"> <a href="/articles" class="dropdown-toggle">Articles</a></li>
-				  <li class="dropdown"> <a href="/account" class="dropdown-toggle"><i class="fa fa-user"></i> Account</a></li>
+				  <li class="dropdown"> <a href="/users/account" class="dropdown-toggle"><i class="fa fa-user"></i> Account</a></li>
 				  <li class="dropdown"> <a href="/users/logout" class="dropdown-toggle"><strong><i class="fa fa-power-off"></i> Sign out</strong></a></li>
 
 				  <li><a href="#" data-toggle="collapse" data-target="#top-search-bar" id="top-search-toggle"><i class="fa fa-search"></i></a></li>

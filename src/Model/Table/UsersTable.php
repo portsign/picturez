@@ -75,6 +75,13 @@ class UsersTable extends Table
     }
 	public function beforeSave(Event $event, EntityInterface $entity)
     {
-		$entity->picture = 'https://graph.facebook.com/'.$entity->facebook_id.'/picture?redirect=true&type=large';
+		// debug($entity);exit;
+		if ($entity->facebook_id==null) {
+			$entity->status = 'not_verified';
+			$entity->picture = '/img/profile_pictures/default_avatar.jpg';
+		} else {
+			$entity->status = 'verified';
+			$entity->picture = 'https://graph.facebook.com/'.$entity->facebook_id.'/picture?redirect=true&type=large';
+		}
     }
 }
