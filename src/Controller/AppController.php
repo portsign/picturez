@@ -42,7 +42,6 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        // $this->loadComponent('RequestHandler');
 		$this->loadComponent('Flash');
 		$this->loadComponent('AkkaFacebook.Graph', [
 	        'app_id' => '948270651894850',

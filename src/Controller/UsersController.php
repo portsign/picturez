@@ -93,7 +93,6 @@ class UsersController extends AppController
 	    // URLパラメータの取得
 	    $code = $this->request->query('code');
 
-
 	    // アクセストークンを取得する
 	    $http = new Client();
 	    $response = $http->post('https://accounts.google.com/o/oauth2/token', [

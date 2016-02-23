@@ -20,12 +20,12 @@
 			<a href="/users/google_login"><img src="/img/gp_login.png" /></a>
 			<div class="distance-button"></div>
 			<?= $this->Facebook->loginLink($options = ['label' => '<img src="/img/fb_login.png" />']); ?>
-			<br />
-			<br />
+			<br /><br />
 			</div>
 			<div class="col-md-4"></div>
 		</div>
 	</div>
 </div>
 </section>
+
 <?= $this->element('footer') ?>
