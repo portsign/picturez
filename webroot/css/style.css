@@ -149,3 +149,6 @@ theme. But don't modify main-style.css file.
 .align-center {
 	text-align:center;
 }
+.image-picture-account {
+	width: 150px;
+}
