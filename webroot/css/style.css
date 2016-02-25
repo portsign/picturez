@@ -152,3 +152,9 @@ theme. But don't modify main-style.css file.
 .image-picture-account {
 	width: 150px;
 }
+
+.inner {
+	margin: auto;
+    width: 60%;
+    padding: 10px;
+}

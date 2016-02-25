@@ -29,6 +29,7 @@ use Cake\Routing\Router;
 class AppController extends Controller
 {
 
+	
     /**
      * Initialization hook method.
      *
@@ -63,6 +64,7 @@ class AppController extends Controller
 	        ]
 	    ]);
     }
+
 
     /**
      * Before render callback.

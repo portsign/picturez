@@ -8,6 +8,8 @@
 			<div class="col-md-4"><br />
 			<?= $this->Flash->render('error_login') ?>
 			<?= $this->Flash->render('auth') ?>
+			<?= $this->Flash->render('verified') ?>
+			<?= $this->Flash->render('user_not_verified') ?>
 			<?= $this->Form->create() ?>
 			    <fieldset>
 			        <legend><?= __('Please enter your Username and password') ?></legend>

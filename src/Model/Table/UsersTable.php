@@ -6,9 +6,11 @@ use Cake\Event\Event;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\ORM\Marshaller;
 use Cake\Validation\Validator;
 use Cake\ORM\Entity;
-
+use Cake\Mailer\Email;
+use Cake\Datasource\EntityInterface;
 /**
  * Users Model
  *
@@ -73,15 +75,37 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['email']));
         return $rules;
     }
+	public function beforeFind() {
+	}
+	public function afterSave() {
+	}
 	public function beforeSave(Event $event, EntityInterface $entity)
     {
-		// debug($entity);exit;
-		if ($entity->facebook_id==null) {
-			$entity->status = 'not_verified';
-			$entity->picture = '/img/profile_pictures/default_avatar.jpg';
+
+		if ($entity->id==null) {
+			$token = base64_encode($entity->email.$entity->username.$entity->password);
+			if ($entity->facebook_id==null) {
+
+				$entity->status = 'not_verified';
+				$entity->picture = '/img/profile_pictures/default_avatar.jpg';
+				$entity->token = $token;
+				$mail_link = $_SERVER['SERVER_NAME'].'/users?tk='.$token;
+
+				$msg = '<a href="'.$mail_link.'">'.$mail_link.'</a>';
+
+				$email = new Email('default');
+				$email->emailFormat('html');
+				$email->from(['nafiansyah.aqi@gmail.com' => 'Picturez'])
+					->to($entity->email)
+					->subject('Contact Message')
+					->send($msg);
+
+			} else {
+				$entity->status = 'verified';
+				$entity->picture = 'https://graph.facebook.com/'.$entity->facebook_id.'/picture?redirect=true&type=large';
+			}
 		} else {
-			$entity->status = 'verified';
-			$entity->picture = 'https://graph.facebook.com/'.$entity->facebook_id.'/picture?redirect=true&type=large';
+
 		}
     }
 }

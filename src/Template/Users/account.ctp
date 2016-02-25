@@ -14,14 +14,13 @@
 	                	</ul>
 		                <div class="tab-content">
 		                    <div class="tab-pane fade in active" id="tab1">
-			                    <div class="row">
 									<div class="distance-button"></div>
 									<form class="form-horizontal">
 										<fieldset>
 											<div class="form-group">
 												<label class="col-md-4 control-label" for="textinput">Current Picture</label>
 												<div class="col-md-4">
-													<img src="/img/profile_pictures/default_avatar.jpg" class="ratio img-responsive img-circle image-picture-account" />
+													<img src="/img/profile_pictures/default_avatar.jpg" class="inner ratio img-responsive img-circle image-picture-account" />
 											    </div>
 											</div>
 											<div class="form-group">
@@ -76,7 +75,6 @@
 										</fieldset>
 									</form>
 			                    </div>
-			                </div>
 		                <div class="tab-pane fade" id="tab2">
 		                    <div class="row">
 								<!--  -->

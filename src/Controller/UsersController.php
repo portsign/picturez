@@ -5,6 +5,8 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Http\Client;
 use Cake\Routing\Router;
+use Cake\ORM\Marshaller;
+
 /**
  * Users Controller
  *
@@ -16,7 +18,7 @@ class UsersController extends AppController
 	public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'success', 'googleLogin', 'googleCallback']);
+        $this->Auth->allow(['add', 'success', 'googleLogin', 'googleCallback', 'index', 'accessToken']);
     }
 
     /**
@@ -24,24 +26,52 @@ class UsersController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function index($id=null)
     {
-        $users = $this->paginate($this->Users);
+		$req_par = $this->request->query;
+		if (isset($req_par) && $req_par) {
+			$token = $this->request->query('tk');
+			$user = $this->Users->find('all',[
+				'conditions' => ['Users.token' => $token]
+				])->first();
 
-        $this->set(compact('users'));
-        $this->set('_serialize', ['users']);
-    }
+			$this->request->data['email'] = $user->email;
+			$this->request->data['username'] = $user->username;
+			$this->request->data['password'] = $user->password;
+			$this->request->data['status'] = 'verified';
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $this->Flash->success('Your Account Has been Verified', ['key' => 'verified']);
+                return $this->redirect(['action' => 'login']);
+            } else {
+                $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            }
+
+	        $this->set(compact('user'));
+	        $this->set('_serialize', ['user']);
+		} else {
+			$this->redirect(['action' => 'login']);
+		}
+	}
 	public function login()
     {
 		if ($this->request->is('post')) {
 	        $user = $this->Auth->identify();
+			// debug($this->request->data);exit;
 	        if ($user) {
-	            $this->Auth->setUser($user);
-				// debug($user);exit;
-				if ($user['first_name']==null) {
-	            	return $this->redirect('/users/account');
+				// debug($user['status']);exit;
+				if ($user['status']=='not_verified') {
+					$this->Flash->error('Need to verified your account, please check your email', [
+						'key' => 'user_not_verified']
+					);
+					$this->redirect('/users/login');
 				} else {
-					return $this->redirect('/users/timeline');
+		            $this->Auth->setUser($user);
+					if ($user['first_name']==null) {
+		            	return $this->redirect('/users/account');
+					} else {
+						return $this->redirect('/users/timeline');
+					}
 				}
 	        }
 			$this->Flash->error('Wrong Username or Password', [
