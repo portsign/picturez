@@ -2,7 +2,6 @@
 <html>
 <head>
     <?= $this->Html->charset() ?>
-	<!-- Meta Tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -30,7 +29,9 @@
 
 <script src="/js/jquery-2.1.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/ckeditor/ckeditor.js"></script>
+<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 <script src="/js/jquery-plugin-collection.js"></script>
 <script src="/js/custom.js"></script>
 <script>

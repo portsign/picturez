@@ -32,7 +32,9 @@ class UsersTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->addBehavior('Timestamp');
+	    $this->addBehavior('Josegonzalez/Upload.Upload', [
+		   'picture' => []
+	    ]);
     }
 
     /**
@@ -43,22 +45,22 @@ class UsersTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
-
-        $validator
-            ->email('email')
-            ->allowEmpty('email');
-
-        $validator
-            ->allowEmpty('password');
-
-        $validator
-            ->allowEmpty('status');
-
-        $validator
-            ->allowEmpty('role');
+        // $validator
+        //     ->integer('id')
+        //     ->allowEmpty('id', 'create');
+		//
+        // $validator
+        //     ->email('email')
+        //     ->allowEmpty('email');
+		//
+        // $validator
+        //     ->allowEmpty('password');
+		//
+        // $validator
+        //     ->allowEmpty('status');
+		//
+        // $validator
+        //     ->allowEmpty('role');
 
         return $validator;
     }
@@ -87,7 +89,7 @@ class UsersTable extends Table
 			if ($entity->facebook_id==null) {
 
 				$entity->status = 'not_verified';
-				$entity->picture = '/img/profile_pictures/default_avatar.jpg';
+				$entity->picture = '/files/Users/picture/default_avatar.jpg';
 				$entity->token = $token;
 				$mail_link = $_SERVER['SERVER_NAME'].'/users?tk='.$token;
 
@@ -105,7 +107,9 @@ class UsersTable extends Table
 				$entity->picture = 'https://graph.facebook.com/'.$entity->facebook_id.'/picture?redirect=true&type=large';
 			}
 		} else {
-
+			// debug($entity);exit;
+			$entpic = str_replace('/files/Users/picture/', '', $entity->picture);
+			$entity->picture = '/files/Users/picture/'.$entpic;
 		}
     }
 }

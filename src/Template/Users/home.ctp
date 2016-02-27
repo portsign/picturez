@@ -20,14 +20,14 @@
 							</a>
   			            </div>
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<a href="#">
+							<a href="/diaries/add">
 					            <div class="icon-box boxed mb-30"> <i class="fa fa-book"></i>
 					                <h4 class="heading">Write My Diary</h4>
 					            </div>
 						    </a>
 			            </div>
 			            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<a href="#">
+							<a href="/quotes/add">
 				                <div class="icon-box boxed darker mb-30"> <i class="fa fa-pencil"></i>
 				                	<h4 class="heading">Make Quote</h4>
 				                </div>
@@ -35,23 +35,23 @@
 			            </div>
 
 			            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<a href="#">
+							<a href="/popular-diaries">
 				                <div class="icon-box boxed darker mb-30"> <i class="fa fa-star"></i><i class="fa fa-book"></i>
 				                	<h4 class="heading">Popular Diaries</h4>
 				                </div>
 						    </a>
 			            </div>
 			            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						<a href="#">
+						<a href="/popular-quotes">
 			                <div class="icon-box boxed mb-30"> <i class="fa fa-star"></i><i class="fa fa-pencil"></i>
 			                	<h4 class="heading">Popular Quotes</h4>
 			                </div>
 					    </a>
 			            </div>
 			            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-						<a href="#">
+						<a href="/users/settings">
 			                <div class="icon-box boxed darker mb-30"> <i class="pe-7s-help2"></i>
-			                	<h4 class="heading">Latest</h4>
+			                	<h4 class="heading">Settings</h4>
 			                </div>
 					    </a>
 			            </div>

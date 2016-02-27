@@ -18,7 +18,15 @@ class UsersController extends AppController
 	public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'success', 'googleLogin', 'googleCallback', 'index', 'accessToken']);
+        $this->Auth->allow([
+			  'add'
+			, 'success'
+			, 'googleLogin'
+			, 'googleCallback'
+			, 'index'
+			, 'accessToken'
+			, 'account'
+		]);
     }
 
     /**
@@ -34,7 +42,6 @@ class UsersController extends AppController
 			$user = $this->Users->find('all',[
 				'conditions' => ['Users.token' => $token]
 				])->first();
-
 			$this->request->data['email'] = $user->email;
 			$this->request->data['username'] = $user->username;
 			$this->request->data['password'] = $user->password;
@@ -46,7 +53,6 @@ class UsersController extends AppController
             } else {
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
-
 	        $this->set(compact('user'));
 	        $this->set('_serialize', ['user']);
 		} else {
@@ -57,9 +63,7 @@ class UsersController extends AppController
     {
 		if ($this->request->is('post')) {
 	        $user = $this->Auth->identify();
-			// debug($this->request->data);exit;
 	        if ($user) {
-				// debug($user['status']);exit;
 				if ($user['status']=='not_verified') {
 					$this->Flash->error('Need to verified your account, please check your email', [
 						'key' => 'user_not_verified']
@@ -81,29 +85,23 @@ class UsersController extends AppController
     }
 
 	public function googleLogin() {
-
 	    // GoogleのOAuth設定で生成された値
 	    $client_id = '487749713247-hci8p168bpnpumkm9hk5qea8p4r6mkvc.apps.googleusercontent.com';
-
 	    // コールバックURL
 	    $callback = Router::url(['action'=>'googleCallback'], true);
-
 	    // スコープ
 	    $scopes = array(
 	        'https://www.googleapis.com/auth/userinfo.profile',
 	        'https://www.googleapis.com/auth/userinfo.email',
 	    );
-
 	    // Google+のログイン画面へリダイレクト
 	    $url = sprintf('https://accounts.google.com/o/oauth2/auth?scope=%s&redirect_uri=%s&response_type=code&client_id=%s',
 	        urlencode(implode(' ', $scopes)),
 	        urlencode($callback),
 	        $client_id
 	    );
-
 	    return $this->redirect($url);
 	}
-
 
 	/**
 	 *
@@ -111,18 +109,14 @@ class UsersController extends AppController
 	 *
 	 */
 	public function googleCallback() {
-
 	    // GoogleのOAuth設定で生成された値
 	    $client_id = '487749713247-hci8p168bpnpumkm9hk5qea8p4r6mkvc.apps.googleusercontent.com';
 	    $client_secret = 'NyMD--BPiUSpaOpVLBL_NI6X';
-
 		// debug($callback);exit;
 	    // コールバックURL
 	    $callback = Router::url(['action'=>'googleCallback'], true);
-
 	    // URLパラメータの取得
 	    $code = $this->request->query('code');
-
 	    // アクセストークンを取得する
 	    $http = new Client();
 	    $response = $http->post('https://accounts.google.com/o/oauth2/token', [
@@ -134,19 +128,13 @@ class UsersController extends AppController
 	    ]);
 	    $json_token = json_decode($response->body);
 	    $access_token = $json_token->access_token;
-
 	    // ユーザ情報の取得
 	    $http = new Client();
 	    $response = $http->get('https://www.googleapis.com/oauth2/v1/userinfo', [
 	        'access_token' => $access_token
 	    ]);
-
 	    $user = json_decode($response->body);
 		debug($user);exit;
-	    // $userにユーザIDやメールアドレスが設定されている
-	    // $user->id
-	    // $user->email
-
 	}
 
 	public function logout()
@@ -165,9 +153,29 @@ class UsersController extends AppController
     {
 
     }
-	public function account()
+	public function account($id=null)
     {
-
+		$id = $this->request->session()->read(['Auth', 'User', 'id']);
+		$user = $this->Users->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+			$this->request->data['id'] = $user->id;
+			if (isset($this->request->data['picture']) && $this->request->data['picture']['name']=='') {
+				$this->request->data['picture'] = $user->picture;
+			}
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $this->Flash->success('Your Profile has been saved.', [
+					'key' => 'successEditProfile'
+				]);
+                return $this->redirect(['action' => 'account']);
+            } else {
+                $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            }
+        }
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
     }
     public function view($id = null)
     {
@@ -210,6 +218,7 @@ class UsersController extends AppController
     {
 
     }
+
     /**
      * Edit method
      *
