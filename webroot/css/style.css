@@ -179,3 +179,6 @@ theme. But don't modify main-style.css file.
 .distance-action-button {
 	width: 25px;
 }
+.font-color {
+    color: green;
+}

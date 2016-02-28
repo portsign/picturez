@@ -25,13 +25,14 @@
 			  <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" role="menu" style="height: 1px;">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"> <a href="/users/timeline" class="dropdown-toggle">Timeline</a></li>
-					<li class="dropdown"> <a href="/users/home" class="dropdown-toggle">Menu</a></li>
-				  <li class="dropdown"> <a href="/popular-quotes" class="dropdown-toggle">Popular Quotes</a></li>
-				  <li class="dropdown"> <a href="/popular-diaries" class="dropdown-toggle">Popular Diaries</a></li>
-				  <li class="dropdown"> <a href="/users/account" class="dropdown-toggle"><i class="fa fa-user"></i> Account</a></li>
-				  <li class="dropdown"> <a href="/users/logout" class="dropdown-toggle"><strong><i class="fa fa-power-off"></i> Sign out</strong></a></li>
+					<li class="dropdown"> <a href="/popular-quotes" class="dropdown-toggle">Popular Quotes</a></li>
+					<li class="dropdown"> <a href="/popular-diaries" class="dropdown-toggle">Popular Diaries</a></li>
+					<li class="dropdown"> <a href="/" class="dropdown-toggle"><i class="fa fa-send-o"></i> My Page</a></li>
+					<li class="dropdown"> <a href="/users/home" class="dropdown-toggle"><i class="fa fa-square"></i> Menu</a></li>
+					<li class="dropdown"> <a href="/users/account" class="dropdown-toggle"><i class="fa fa-user"></i> Account</a></li>
+					<li class="dropdown"> <a href="/users/logout" class="dropdown-toggle"><strong><i class="fa fa-power-off"></i> Sign out</strong></a></li>
 
-				  <li><a href="#" data-toggle="collapse" data-target="#top-search-bar" id="top-search-toggle"><i class="fa fa-search"></i></a></li>
+				  	<li><a href="#" data-toggle="collapse" data-target="#top-search-bar" id="top-search-toggle"><i class="fa fa-search"></i></a></li>
 
 				</ul>
 			  </div>

@@ -20,14 +20,14 @@
 							</a>
   			            </div>
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<a href="/diaries/add">
+							<a href="/diaries">
 					            <div class="icon-box boxed mb-30"> <i class="fa fa-book"></i>
 					                <h4 class="heading">Write My Diary</h4>
 					            </div>
 						    </a>
 			            </div>
 			            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<a href="/quotes/add">
+							<a href="/quotes">
 				                <div class="icon-box boxed darker mb-30"> <i class="fa fa-pencil"></i>
 				                	<h4 class="heading">Make Quote</h4>
 				                </div>

@@ -16,7 +16,11 @@
 				        <?php
 				            echo $this->Form->input('title', ['class' => 'form-control', 'placeholder' => 'title for your story today', 'autofocus' => true]);
 				            echo $this->Form->input('diary', ['class' => 'ckeditor form-control']);
+				            echo '<div class="distance-button"></div>';
+				            echo $this->Form->input('tags', ['class' => 'ckeditor form-control']);
 				        ?>
+						<div class="distance-button"></div>
+				        <a href="" class="btn btn-default">Use Feature Image</a>
 				    </fieldset>
 					<div class="distance-button"></div>
 				    <?= $this->Form->button(__('Post'), ['class' => 'btn btn-warning']) ?>

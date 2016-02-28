@@ -51,10 +51,10 @@ class DiariesTable extends Table
             ->requirePresence('diary', 'create')
             ->notEmpty('diary');
 
-        $validator
-            ->integer('status')
-            ->requirePresence('status', 'create')
-            ->notEmpty('status');
+        // $validator
+        //     ->integer('status')
+        //     ->requirePresence('status', 'create')
+        //     ->notEmpty('status');
 
         return $validator;
     }

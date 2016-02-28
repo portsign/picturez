@@ -51,6 +51,7 @@ class DiariesController extends AppController
         $diary = $this->Diaries->newEntity();
         if ($this->request->is('post')) {
             $diary = $this->Diaries->patchEntity($diary, $this->request->data);
+            // debug($diary);exit;
             if ($this->Diaries->save($diary)) {
                 $this->Flash->success(__('The diary has been saved.'));
                 return $this->redirect(['action' => 'index']);
