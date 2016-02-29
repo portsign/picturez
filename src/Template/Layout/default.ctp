@@ -16,6 +16,8 @@
 	<link href="/css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
 	<link href="/css/responsive.css" rel="stylesheet" type="text/css">
 	<link href="/css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/css/jquery.tagsinput.css" />
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -29,10 +31,10 @@
 
 <script src="/js/jquery-2.1.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <script src="/js/ckeditor/ckeditor.js"></script>
 <!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 <script src="/js/jquery-plugin-collection.js"></script>
+<script src="/js/jquery.tagsinput.js"></script>
 <script src="/js/custom.js"></script>
 <script>
 $(document).ready(function () {
@@ -40,7 +42,29 @@ $(document).ready(function () {
 		$(this).toggleClass('open');
 		$('.option').toggleClass('scale-on');
 	});
+
+	//this is for Tags
+	$('#tags').tagsInput({
+	   'height':'43px',
+	   'width':'100%',
+	});
 });
+</script>
+<script>
+    //remove modal when checked radio button image
+ 	$(document).ready(function(){
+ 		$('label.image-toggler').on('click', function(){
+ 			$('a.btn-default').eq(0).addClass('hidden');
+ 			$('a.btn-danger').removeClass('hidden');
+ 			$(this).clone('img').appendTo("div#hidden_radio");
+ 			$(this).attr("data-toggle.buttons");
+ 		});
+ 		$("a.btn-danger").click(function() {
+ 			$('a.btn-default').eq(0).removeClass('hidden');
+ 			$('a.btn-danger').addClass('hidden');
+ 			$('div#selected-image label').remove();
+ 		});
+ 	});
 </script>
 </body>
 </html>

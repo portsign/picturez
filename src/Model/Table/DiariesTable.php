@@ -3,9 +3,11 @@ namespace App\Model\Table;
 
 use App\Model\Entity\Diary;
 use Cake\ORM\Query;
+use Cake\Event\Event;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Datasource\EntityInterface;
 
 /**
  * Diaries Model
@@ -57,5 +59,9 @@ class DiariesTable extends Table
         //     ->notEmpty('status');
 
         return $validator;
+    }
+    public function beforeSave(Event $event, EntityInterface $entity)
+    {
+        
     }
 }

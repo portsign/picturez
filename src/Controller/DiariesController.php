@@ -18,8 +18,13 @@ class DiariesController extends AppController
      */
     public function index()
     {
+		$id = $this->request->session()->read(['Auth','User','id']);
+        $this->paginate = [
+            'conditions' => ['Diaries.users_id' => $id]
+        ];
         $diaries = $this->paginate($this->Diaries);
-		
+        // debug($diaries); exit;
+
         $this->set(compact('diaries'));
         $this->set('_serialize', ['diaries']);
     }
@@ -48,10 +53,17 @@ class DiariesController extends AppController
      */
     public function add()
     {
+        $id = $this->request->session()->read(['Auth','User','id']);
         $diary = $this->Diaries->newEntity();
         if ($this->request->is('post')) {
             $diary = $this->Diaries->patchEntity($diary, $this->request->data);
-            // debug($diary);exit;
+            if ($diary->post){
+                $diary->status='posted'; //declare new data @status
+            } else {
+                $diary->status='draft'; //declare new data @status
+            }
+            $diary->users_id=$id; //declare new data
+            debug($diary);exit;
             if ($this->Diaries->save($diary)) {
                 $this->Flash->success(__('The diary has been saved.'));
                 return $this->redirect(['action' => 'index']);

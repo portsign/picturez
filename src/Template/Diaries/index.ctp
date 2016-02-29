@@ -49,7 +49,7 @@
 				            <tr>
 				                <td><input type="checkbox"></td>
 				                <td><a href="/diaries/edit/<?= h($diary->id) ?>"><?= h($diary->title) ?></a></td>
-				                <td class="font-color"><strong><?= h($diary->status) ?></strong></td>
+				                <td <?php if ($diary->status=='posted') { echo 'class="font-color-posted"'; } else { echo 'class="font-color-draft"'; } ?> ><strong><?= h($diary->status) ?></strong></td>
 				                <td><?= h($diary->created) ?></td>
 				                <td><?= h($diary->modified) ?></td>
 				                <td class="actions">

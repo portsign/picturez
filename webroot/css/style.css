@@ -179,6 +179,15 @@ theme. But don't modify main-style.css file.
 .distance-action-button {
 	width: 25px;
 }
-.font-color {
+.font-color-draft {
+    color: orange;
+}
+.font-color-posted {
     color: green;
+}
+#tags {
+    height: 40px !important;
+}
+.image-toggler {
+    padding: 4px;
 }
