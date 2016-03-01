@@ -57,7 +57,8 @@ $(document).ready(function () {
  			$('a.btn-default').eq(0).addClass('hidden');
  			$('a.btn-danger').removeClass('hidden');
  			$(this).clone('img').appendTo("div#hidden_radio");
- 			$(this).attr("data-toggle.buttons");
+ 			$('label.image-toggler img').eq(0).addClass("prev-thumb");
+ 			$('label.image-toggler').eq(0).addClass("disabled");
  		});
  		$("a.btn-danger").click(function() {
  			$('a.btn-default').eq(0).removeClass('hidden');
