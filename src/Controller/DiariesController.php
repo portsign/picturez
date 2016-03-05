@@ -20,10 +20,10 @@ class DiariesController extends AppController
     {
 		$id = $this->request->session()->read(['Auth','User','id']);
         $this->paginate = [
-            'conditions' => ['Diaries.users_id' => $id]
+            'conditions' => ['Diaries.users_id' => $id],
+            'order' => ['Diaries.created' => 'DESC']
         ];
         $diaries = $this->paginate($this->Diaries);
-        // debug($diaries); exit;
 
         $this->set(compact('diaries'));
         $this->set('_serialize', ['diaries']);
@@ -53,17 +53,14 @@ class DiariesController extends AppController
      */
     public function add()
     {
-        $id = $this->request->session()->read(['Auth','User','id']);
+        $id_user = $this->request->session()->read(['Auth','User','id']);
         $diary = $this->Diaries->newEntity();
         if ($this->request->is('post')) {
             $diary = $this->Diaries->patchEntity($diary, $this->request->data);
-            if ($diary->post){
-                $diary->status='posted'; //declare new data @status
-            } else {
-                $diary->status='draft'; //declare new data @status
-            }
-            $diary->users_id=$id; //declare new data
-            debug($diary);exit;
+
+            $diary->id=$this->request->data['id'];
+            $diary->users_id=$id_user; //declare new data and Update data
+            $diary->status='posted';
             if ($this->Diaries->save($diary)) {
                 $this->Flash->success(__('The diary has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -73,6 +70,34 @@ class DiariesController extends AppController
         }
         $this->set(compact('diary'));
         $this->set('_serialize', ['diary']);
+
+    }
+
+    public function ajaxSaveDiary() {
+        $json = ['status' => 'error'];
+
+        $id_user = $this->request->session()->read(['Auth','User','id']);
+        $diary = $this->Diaries->newEntity();
+        if ($this->request->is('ajax')) {
+            $diary = $this->Diaries->patchEntity($diary, $this->request->data);
+
+            $diary->users_id=$id_user; //declare new data and Update data
+            if ($this->request->data['id']=='') {
+            } else {
+                $diary->id = $this->request->data['id'];
+            }
+            if ($this->Diaries->save($diary)) {
+                $json = [
+                    'status' => 'success',
+                    'id' => $diary->id
+                ];
+            }
+        }
+        $this->set(compact('diary'));
+        $this->set('_serialize', ['diary']);
+        echo json_encode($json);
+
+        exit;
     }
 
     /**

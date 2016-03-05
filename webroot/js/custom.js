@@ -83,7 +83,7 @@
         escope_tooltip();
         escope_shop_shipto_different_address();
         escope_topsearch_toggle();
-        escope_twittie();
+        // escope_twittie();
         escope_mailChimp();
         escope_toggleMap();
     });
@@ -1004,24 +1004,24 @@
     /* ---------------------------------------------------------------------- */
     /* ------------------------ 38 - Twitter Feed  -------------------------- */
     /* ---------------------------------------------------------------------- */
-    function escope_twittie() {
-        $('.twitter-feed').twittie({
-            username: 'Envato',
-            dateFormat: '%b. %d, %Y',
-            template: '{{tweet}} <div class="date">{{date}}</div>',
-            count: 3,
-            loadingText: 'Loading!'
-        }, function() {
-            $(".twitter-carousel ul").owlCarousel({
-                autoplay: true,
-                autoplayTimeout: 2000,
-                loop: true,
-                items: 1,
-                dots: true,
-                nav: false
-            });
-        });
-    }
+    // function escope_twittie() {
+    //     $('.twitter-feed').twittie({
+    //         username: 'Envato',
+    //         dateFormat: '%b. %d, %Y',
+    //         template: '{{tweet}} <div class="date">{{date}}</div>',
+    //         count: 3,
+    //         loadingText: 'Loading!'
+    //     }, function() {
+    //         $(".twitter-carousel ul").owlCarousel({
+    //             autoplay: true,
+    //             autoplayTimeout: 2000,
+    //             loop: true,
+    //             items: 1,
+    //             dots: true,
+    //             nav: false
+    //         });
+    //     });
+    // }
 
     /* ---------------------------------------------------------------------- */
     /* --------------------------- 39 - Mailchimp --------------------------- */

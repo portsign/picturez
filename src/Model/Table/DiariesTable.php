@@ -49,15 +49,6 @@ class DiariesTable extends Table
             ->requirePresence('title', 'create')
             ->notEmpty('title');
 
-        $validator
-            ->requirePresence('diary', 'create')
-            ->notEmpty('diary');
-
-        // $validator
-        //     ->integer('status')
-        //     ->requirePresence('status', 'create')
-        //     ->notEmpty('status');
-
         return $validator;
     }
     public function beforeSave(Event $event, EntityInterface $entity)

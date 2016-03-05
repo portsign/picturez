@@ -36,6 +36,7 @@
 <script src="/js/jquery-plugin-collection.js"></script>
 <script src="/js/jquery.tagsinput.js"></script>
 <script src="/js/custom.js"></script>
+<script src="/js/main.js"></script>
 <script>
 $(document).ready(function () {
 	$('.material-button-toggle').click(function () {
@@ -64,6 +65,7 @@ $(document).ready(function () {
  			$('a.btn-default').eq(0).removeClass('hidden');
  			$('a.btn-danger').addClass('hidden');
  			$('div#selected-image label').remove();
+ 			$(':input:checked').remove();
  		});
  	});
 </script>
