@@ -55,19 +55,7 @@ class DiariesController extends AppController
     {
         $id_user = $this->request->session()->read(['Auth','User','id']);
         $diary = $this->Diaries->newEntity();
-        if ($this->request->is('post')) {
-            $diary = $this->Diaries->patchEntity($diary, $this->request->data);
 
-            $diary->id=$this->request->data['id'];
-            $diary->users_id=$id_user; //declare new data and Update data
-            $diary->status='posted';
-            if ($this->Diaries->save($diary)) {
-                $this->Flash->success(__('The diary has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The diary could not be saved. Please, try again.'));
-            }
-        }
         $this->set(compact('diary'));
         $this->set('_serialize', ['diary']);
 
@@ -83,12 +71,13 @@ class DiariesController extends AppController
 
             $diary->users_id=$id_user; //declare new data and Update data
             if ($this->request->data['id']=='') {
+               
             } else {
                 $diary->id = $this->request->data['id'];
             }
             if ($this->Diaries->save($diary)) {
                 $json = [
-                    'status' => 'success',
+                    'status' => $diary->status,
                     'id' => $diary->id
                 ];
             }

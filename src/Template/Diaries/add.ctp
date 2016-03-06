@@ -11,12 +11,11 @@
 				</ol>
 				<div class="diaries form large-9 medium-8 columns content">
 				    <?= $this->Form->create($diary, ['id' => 'ajax-submit']) ?>
-				    <div id="inject-id hidden"></div>
-				    <div id="insert-id"></div>
+				    <div id="inject-id" class="hidden"></div>
 				    <fieldset>
 				        <legend><?= __('Add New Diary') ?></legend><div class='uil-reload-css hidden' style='-webkit-transform:scale(0.12)'><div></div></div>
 				        <?php
-				            echo $this->Form->input('title', ['class' => 'form-control', 'placeholder' => 'title for your story today', 'autofocus' => true]);
+				            echo $this->Form->input('title', ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'title for your story today', 'autofocus' => true]);
 				            echo $this->Form->input('diary', ['class' => 'ckeditor form-control uil-cube-css']).'<div class="distance-button"></div>';
 				            echo $this->Form->input('tags', ['id' => 'tags', 'class' => 'ckeditor', 'style' => 'height:50px;']);
 				        ?>
@@ -107,7 +106,7 @@
 
 					    </fieldset><div class="distance-button"></div>
 					    <?= $this->Form->button(__('Post'), ['name' => 'post', 'value' => true, 'class' => 'btn btn-warning']) ?>
-					    <?= $this->Form->button(__('Draft'), ['name' => 'draft', 'value' => false, 'class' => 'btn btn-success']) ?><a href="/diaries" class="btn btn-default pull-right">Cancel</a><div class="distance-button"></div>
+					    <?= $this->Form->button(__('Save'), ['name' => 'draft', 'value' => false, 'class' => 'btn btn-success']) ?><a href="/diaries" class="btn btn-default pull-right">Cancel</a><div class="distance-button"></div>
 					    <?= $this->Form->end() ?>
 				</div>
 			</div>

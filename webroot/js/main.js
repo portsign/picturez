@@ -1,32 +1,31 @@
-    
+
     var dataDiary = new Array();
 
     $('button.btn-success').click(function(){ 
         
         dataDiary['id'] = $('div#inject-id').text();
-        dataDiary['title'] = $('input').eq(2).val();
+        dataDiary['title'] = $('#title').val();
         dataDiary['diary'] = CKEDITOR.instances['diary'].getData();
-        dataDiary['tags'] = $('input').eq(3).val();
+        dataDiary['tags'] = $('#tags').val();
         dataDiary['featureImage'] = $(':input:checked').val();
         dataDiary['status'] = 'draft';
 
         save(dataDiary);
         return false;
     });
-
-    setInterval(function(){ 
+    
+    $('button.btn-warning').click(function(){ 
         
         dataDiary['id'] = $('div#inject-id').text();
-        dataDiary['title'] = $('input').eq(2).val();
+        dataDiary['title'] = $('#title').val();
         dataDiary['diary'] = CKEDITOR.instances['diary'].getData();
-        dataDiary['tags'] = $('input').eq(3).val();
+        dataDiary['tags'] = $('#tags').val();
         dataDiary['featureImage'] = $(':input:checked').val();
-        dataDiary['status'] = 'draft';
+        dataDiary['status'] = 'posted';
 
         save(dataDiary);
         return false;
-
-    }, 60000);
+    });
 
 
 function save(data) {
@@ -58,7 +57,10 @@ function save(data) {
                 $('div.alert-success').addClass('hidden');
             });   
             $('div#inject-id').text(response.id);
-            $('div#insert-id').html('<input type="hidden" name="id" value="'+response.id+'" />');
+
+            if(response.status=='posted') {
+                window.location.href = "/diaries";
+            }
         },
         error: function(){
             alert('Fuck');
