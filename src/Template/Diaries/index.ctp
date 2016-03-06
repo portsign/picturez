@@ -23,13 +23,14 @@
 					    </div>
 				    </div>
 				    <div class="col-md-1">
-						<button class="btn">Apply</button>
+						<button class="btn btn-apply">Apply</button>
+						<div class="distance-button"></div>
 					</div>
 				    <div class="col-md-9">
 					    <div class="row">
 					    	<form action="/diaries" method="GET">
 							    <div class="form-group">
-							        <input type="text" name="key" class="form-control" placeholder="Type Keyword and Enter">
+							        <input type="text" name="key" class="form-search form-control" placeholder="Type Keyword and Enter">
 							        <button type="submit" class="hidden">Search</button>
 							    </div>
 							</form>
@@ -38,7 +39,7 @@
 				    <table class="table table-striped table-border" cellpadding="0" cellspacing="0">
 				        <thead>
 				            <tr>
-				                <th><?= $this->Paginator->sort('/') ?></th>
+				                <th><input type="checkbox" id="selectall" /></th>
 				                <th><?= $this->Paginator->sort('title') ?></th>
 				                <th><?= $this->Paginator->sort('status') ?></th>
 				                <th><?= $this->Paginator->sort('created') ?></th>
@@ -51,7 +52,7 @@
 				            	foreach ($diaries as $diary): 
 				            ?>
 				            <tr>
-				                <td><input type="checkbox"></td>
+				                <td><input type="checkbox" class="case" name="case"></td>
 				                <td><a href="/diaries/edit/<?= h($diary->id) ?>"><?= h($diary->title) ?></a></td>
 				                <td <?php if ($diary->status=='posted') { echo 'class="font-color-posted"'; } else { echo 'class="font-color-draft"'; } ?> ><strong><?= h($diary->status) ?></strong></td>
 				                <td><?= h($diary->created) ?></td>

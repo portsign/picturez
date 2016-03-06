@@ -71,3 +71,18 @@ function save(data) {
 }
 
 
+//BULK ACTION ON LIST DIARIES
+
+$("#selectall").click(function () {
+    $('.case').prop('checked', this.checked);
+});
+
+$(".case").click(function(){
+
+    if($(".case").length == $(".case:checked").length) {
+        $("#selectall").attr("checked", "checked");
+    } else {
+        $("#selectall").removeAttr("checked");
+    }
+
+});

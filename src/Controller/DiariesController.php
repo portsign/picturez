@@ -131,6 +131,7 @@ class DiariesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $diary = $this->Diaries->get($id);
+        debug($diary);exit;
         if ($this->Diaries->delete($diary)) {
             $this->Flash->success(__('The diary has been deleted.'));
         } else {

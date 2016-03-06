@@ -426,3 +426,9 @@ width: 100%;
 .btn {
     border-radius: 0px;
 }
+.form-search {
+    border-left: 4px solid #888;
+}
+.btn-apply {
+    margin-left: -12px;
+}
