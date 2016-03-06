@@ -86,3 +86,7 @@ $(".case").click(function(){
     }
 
 });
+
+setTimeout(function(){
+  $('div.alert-success').addClass('hidden');
+}, 5000);

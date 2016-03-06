@@ -18,6 +18,7 @@ class DiariesController extends AppController
      */
     public function index($keyword=null)
     {
+
         if (isset($this->request->query['key'])) {
             $keyword = $this->request->query['key'];
         }
@@ -30,6 +31,45 @@ class DiariesController extends AppController
             'order' => ['Diaries.created' => 'DESC']
         ];
         $diaries = $this->paginate($this->Diaries);
+
+        // IS ACTION
+        if ($this->request->is(['patch', 'post', 'put'])) {
+
+            foreach($this->request->data['select'] as $key => $data) {
+                $this->Diaries->id = $data;
+                $uid = $this->Diaries->id;
+
+                if ($this->request->data['status']=='delete_permanently') {
+                    // THIS BULK DELETE
+                    $diary = $this->Diaries->get($uid);
+                    $this->Diaries->delete($diary);
+                    $this->redirect(['action' => 'index']);
+
+                } elseif ($this->request->data['status']=='move_to_draft') {
+                    // THIS BULK DRAFT
+                    $diary = $this->Diaries->get($uid, [
+                        'contain' => []
+                    ]);
+                    $diary->status = 'draft';
+                    $this->Diaries->save($diary);
+                    $this->redirect(['action' => 'index']);
+                    
+                } else {
+                    // THIS BULK POST
+                    $diary = $this->Diaries->get($uid, [
+                        'contain' => []
+                    ]);
+                    $diary->status = 'posted';
+                    $this->Diaries->save($diary);
+                    $this->redirect(['action' => 'index']);
+                }
+            
+            }
+            $this->Flash->success('Your Selected Diary success to update', [
+                'key' => 'succes_bulk_update'
+            ]);
+        }
+        // END OF IS ACTION
 
         $this->set(compact('diaries'));
         $this->set('_serialize', ['diaries']);
@@ -131,7 +171,7 @@ class DiariesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $diary = $this->Diaries->get($id);
-        debug($diary);exit;
+        // debug($diary);exit;
         if ($this->Diaries->delete($diary)) {
             $this->Flash->success(__('The diary has been deleted.'));
         } else {

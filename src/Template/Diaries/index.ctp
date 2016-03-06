@@ -13,19 +13,6 @@
 				<div class="diaries index large-9 medium-8 columns content">
 					<a href="/diaries/add" class="btn btn-default"><i class="fa fa-plus"></i> Add New Diary</a>
 				    <h3><?= __('Diaries') ?></h3>
-				    <div class="col-md-2">
-					    <div class="row">
-						    <select name="status" class="form-control">
-						    	<option value="delete_permanently">Delete Permanently</option>
-						    	<option value="move_to_trash">Move to Draft</option>
-						    	<option value="postall">Post All</option>
-						    </select>
-					    </div>
-				    </div>
-				    <div class="col-md-1">
-						<button class="btn btn-apply">Apply</button>
-						<div class="distance-button"></div>
-					</div>
 				    <div class="col-md-9">
 					    <div class="row">
 					    	<form action="/diaries" method="GET">
@@ -36,6 +23,22 @@
 							</form>
 					    </div>
 				    </div>
+				    <!-- BEGIN FORM -->
+				    <?= $this->Form->create($diaries) ?>
+				    <div class="col-md-2">
+					    <div class="row">
+						    <select name="status" class="form-control">
+						    	<option value="delete_permanently">Delete Permanently</option>
+						    	<option value="move_to_draft">Move to Draft</option>
+						    	<option value="postall">Post All</option>
+						    </select>
+					    </div>
+				    </div>
+				    <div class="col-md-1">
+						<button type="submit" class="btn btn-apply">Apply</button>
+						<div class="distance-button"></div>
+					</div>
+				    <?= $this->Flash->render('succes_bulk_update') ?>
 				    <table class="table table-striped table-border" cellpadding="0" cellspacing="0">
 				        <thead>
 				            <tr>
@@ -52,7 +55,7 @@
 				            	foreach ($diaries as $diary): 
 				            ?>
 				            <tr>
-				                <td><input type="checkbox" class="case" name="case"></td>
+				                <td><input type="checkbox" class="case" value="<?= h($diary->id) ?>" name="select[]"></td>
 				                <td><a href="/diaries/edit/<?= h($diary->id) ?>"><?= h($diary->title) ?></a></td>
 				                <td <?php if ($diary->status=='posted') { echo 'class="font-color-posted"'; } else { echo 'class="font-color-draft"'; } ?> ><strong><?= h($diary->status) ?></strong></td>
 				                <td><?= h($diary->created) ?></td>
@@ -66,6 +69,8 @@
 				            <?php endforeach; ?>
 				        </tbody>
 				    </table>
+				    <!-- END FORM -->
+				    <?= $this->Form->end() ?>
 				    <div class="paginator">
 				        <ul class="pagination">
 				            <?= $this->Paginator->prev('< ' . __('previous')) ?>
