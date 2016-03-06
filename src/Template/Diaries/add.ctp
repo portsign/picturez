@@ -50,52 +50,52 @@
 										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/1.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/1.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/2.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/3.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/2.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/2.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/3.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/5.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/3.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/3.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/4.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/6.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/4.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/4.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/5.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/7.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/5.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/5.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/6.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/8.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/6.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/6.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/7.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/9.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/7.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/7.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/8.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/10.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/8.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/8.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/9.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/11.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/9.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/9.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/10.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/12.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/10.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/10.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/11.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/13.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/11.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/11.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/12.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/15.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/12.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/12.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/13.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/16.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/13.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/13.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/14.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/17.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/14.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/14.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/15.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/18.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/15.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/15.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/16.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/19.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/16.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/16.jpg" width="160" /></a>
 										 	</label>
 										 	<label class="btn btn-default image-toggler" data-image-id="#image2">
-										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/17.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/20.jpg" width="160" /></a>
+										    	<input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/17.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/17.jpg" width="160" /></a>
 										 	</label>
 										</div>
 								    </div>

@@ -16,11 +16,17 @@ class DiariesController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function index($keyword=null)
     {
+        if (isset($this->request->query['key'])) {
+            $keyword = $this->request->query['key'];
+        }
 		$id = $this->request->session()->read(['Auth','User','id']);
         $this->paginate = [
-            'conditions' => ['Diaries.users_id' => $id],
+            'conditions' => [
+                    'Diaries.users_id' => $id, 
+                    'Diaries.title LIKE' => '%'.$keyword.'%'
+                ],
             'order' => ['Diaries.created' => 'DESC']
         ];
         $diaries = $this->paginate($this->Diaries);

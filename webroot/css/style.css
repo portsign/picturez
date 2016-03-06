@@ -420,3 +420,9 @@ width: 100%;
   -o-transform: translate(-15px, 0) rotate(45deg);
   transform: translate(-15px, 0) rotate(45deg);
 /*LOADING AJAX END HERE*/
+}
+
+
+.btn {
+    border-radius: 0px;
+}

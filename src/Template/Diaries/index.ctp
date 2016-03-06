@@ -11,22 +11,26 @@
 				</ol>
 
 				<div class="diaries index large-9 medium-8 columns content">
-					<a href="/diaries/add" class="btn btn-default">Add New Diary</a>
+					<a href="/diaries/add" class="btn btn-default"><i class="fa fa-plus"></i> Add New Diary</a>
 				    <h3><?= __('Diaries') ?></h3>
-				    <div class="col-md-3">
+				    <div class="col-md-2">
 					    <div class="row">
 						    <select name="status" class="form-control">
 						    	<option value="delete_permanently">Delete Permanently</option>
 						    	<option value="move_to_trash">Move to Draft</option>
-						    	<option value="post">Post</option>
+						    	<option value="postall">Post All</option>
 						    </select>
 					    </div>
 				    </div>
+				    <div class="col-md-1">
+						<button class="btn">Apply</button>
+					</div>
 				    <div class="col-md-9">
 					    <div class="row">
-					    	<form role="search">
+					    	<form action="/diaries" method="GET">
 							    <div class="form-group">
-							        <input type="text" class="form-control" placeholder="Search">
+							        <input type="text" name="key" class="form-control" placeholder="Type Keyword and Enter">
+							        <button type="submit" class="hidden">Search</button>
 							    </div>
 							</form>
 					    </div>
@@ -55,7 +59,7 @@
 				                <td class="actions">
 				                    <?= $this->Html->link(__(' '), ['action' => 'view', $diary->id], ['class' => 'fa fa-eye distance-action-button']) ?>
 				                    <?= $this->Html->link(__(' '), ['action' => 'edit', $diary->id], ['class' => 'fa fa-pencil-square-o distance-action-button']) ?>
-				                    <?= $this->Form->postLink(__(''), ['action' => 'delete', $diary->id], ['confirm' => __('Are you sure you want to delete # {0}?', $diary->id), 'class' => 'fa fa-trash-o distance-action-button']) ?>
+				                    <?= $this->Form->postLink(__(''), ['action' => 'delete', $diary->id], ['confirm' => __('Are you sure you want to delete This Diary?', $diary->id), 'class' => 'fa fa-trash-o distance-action-button']) ?>
 				                </td>
 				            </tr>
 				            <?php endforeach; ?>
