@@ -87,7 +87,7 @@ class DiariesController extends AppController
         $diary = $this->Diaries->get($id, [
             'contain' => []
         ]);
-
+        
         $this->set('diary', $diary);
         $this->set('_serialize', ['diary']);
     }

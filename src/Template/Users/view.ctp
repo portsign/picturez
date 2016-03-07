@@ -1,42 +1,85 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th><?= __('Email') ?></th>
-            <td><?= h($user->email) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Status') ?></th>
-            <td><?= h($user->status) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Role') ?></th>
-            <td><?= h($user->role) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Created') ?></th>
-            <td><?= h($user->created) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Modified') ?></th>
-            <td><?= h($user->modified) ?></td>
-        </tr>
-    </table>
+<?= $this->element('navbar') ?>
+<section>
+<style type="text/css">
+    .panel-body {
+        background-image: url('/img/def_feat_pic.jpg');
+        background-size: 1200px 430px;
+
+    }
+    .panel{
+        color: white;
+    }
+    .text-m,.text-muted,.user-profile,.username {
+        color: white;
+    }
+    .userp {
+        padding: 10px;
+        border: 1px solid #000;
+        width: 180px;
+        background-color: #000;
+        opacity: 0.7;
+    }
+</style>
+<div class="container pt-0 pb-0">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="distance-button"></div>
+
+                <div class="users view large-9 medium-8 columns content">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-12 user-profile">
+                            <div class="userp"><strong>User profile</strong></div>
+                            <hr>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
+                          display:block; margin:auto; width: 70%" src="<?= $user->picture ?>">
+                        </div>
+                        <div class="col-md-8" style="background-color: #000;opacity: 0.6;">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <h1 class="only-bottom-margin username"><?= h($user->username) ?></h1>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <span class="text-muted"><strong>Email:</strong></span> <?= h($user->email) ?><br>
+                              <span class="text-muted"><strong>Birth date:</strong></span> <?= h($user->month."/".$user->date."/".$user->year) ?><br>
+                              <span class="text-muted"><strong>Gender:</strong></span> <?= $user->gender ?><br>
+                              <span class="text-muted"><strong>Website:</strong></span> <a target="_blank" href="<?= $user->website ?>"><?= $user->website ?></a><br>
+                              <span class="text-muted"><strong>Short Biography:</strong></span> <?= $user->bio ?><br><br>
+                              <small class="text-muted"><i class="text-m">Created: <?= $user->created ?></i></small>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="activity-mini">
+                                <i class="glyphicon glyphicon-comment text-muted"></i> 500
+                              </div>
+                              <div class="activity-mini">
+                                <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <?php 
+                            $loged = $this->request->session()->read(['Auth','User','id']);
+                            if ($loged!=null) {
+                        ?>
+                            <div class="row">
+                            <div class="col-md-12">
+                                <hr><a href="/users/account" class="btn btn-success pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                            </div>
+                            </div>
+                        <?php } else {} ?>
+                    </div>
+                  </div>
+             
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<?= $this->element('user_footer') ?>

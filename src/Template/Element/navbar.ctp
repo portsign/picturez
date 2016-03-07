@@ -7,11 +7,10 @@
   <header class="header">
 	<div class="header-nav inner-sticky-wrapper">
 
-		<?php
-			// $loged = $this->request->session()->check('Auth');
-			$loged = $this->request->session()->read(['Auth','User','id']);
-			if ($loged!=null) {
-		?>
+	<?php
+		$loged = $this->request->session()->read(['Auth','User','id']);
+		if ($loged!=null) {
+	?>
 
 	  <!-- menu -->
 	  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
@@ -27,7 +26,7 @@
 					<li class="dropdown"> <a href="/users/timeline" class="dropdown-toggle">Timeline</a></li>
 					<li class="dropdown"> <a href="/popular-quotes" class="dropdown-toggle">Popular Quotes</a></li>
 					<li class="dropdown"> <a href="/popular-diaries" class="dropdown-toggle">Popular Diaries</a></li>
-					<li class="dropdown"> <a href="/" class="dropdown-toggle"><i class="fa fa-send-o"></i> My Page</a></li>
+					<li class="dropdown"> <a href="/<?= $this->request->session()->read(['Auth','User','username']) ?>" class="dropdown-toggle"><i class="fa fa-send-o"></i> My Page</a></li>
 					<li class="dropdown"> <a href="/users/home" class="dropdown-toggle"><i class="fa fa-square"></i> Menu</a></li>
 					<li class="dropdown"> <a href="/users/account" class="dropdown-toggle"><i class="fa fa-user"></i> Account</a></li>
 					<li class="dropdown"> <a href="/users/logout" class="dropdown-toggle"><strong><i class="fa fa-power-off"></i> Sign out</strong></a></li>

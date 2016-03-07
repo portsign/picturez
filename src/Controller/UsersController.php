@@ -26,6 +26,8 @@ class UsersController extends AppController
 			, 'index'
 			, 'accessToken'
 			, 'account'
+            , 'view'
+            , 'noaccount'
 		]);
     }
 
@@ -177,16 +179,24 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
-    public function view($id = null)
+    public function view()
     {
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
+        $username = $this->request->params['username'];
+        $user = $this->Users->find('all', [
+            'conditions' => ['Users.username' => $username]
+        ])->first();
+
+        if ($user==null) {
+            return $this->redirect(['action' => 'noaccount']);
+        }
 
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
+    public function noaccount()
+    {
 
+    }
     /**
      * Add method
      *

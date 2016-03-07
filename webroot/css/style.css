@@ -432,3 +432,16 @@ width: 100%;
 .btn-apply {
     margin-left: -12px;
 }
+
+img.avatar {
+  border: 1px solid #eee;
+}
+
+.only-bottom-margin {
+  margin-top: 0px;
+}
+
+.activity-mini {
+  padding-right: 15px;
+  float: left;
+}
