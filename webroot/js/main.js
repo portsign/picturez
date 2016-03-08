@@ -1,31 +1,31 @@
 
-    var dataDiary = new Array();
+var dataDiary = new Array();
 
-    $('button.btn-success').click(function(){ 
-        
-        dataDiary['id'] = $('div#inject-id').text();
-        dataDiary['title'] = $('#title').val();
-        dataDiary['diary'] = CKEDITOR.instances['diary'].getData();
-        dataDiary['tags'] = $('#tags').val();
-        dataDiary['featureImage'] = $(':input:checked').val();
-        dataDiary['status'] = 'draft';
-
-        save(dataDiary);
-        return false;
-    });
+$('button.btn-success').click(function(){ 
     
-    $('button.btn-warning').click(function(){ 
-        
-        dataDiary['id'] = $('div#inject-id').text();
-        dataDiary['title'] = $('#title').val();
-        dataDiary['diary'] = CKEDITOR.instances['diary'].getData();
-        dataDiary['tags'] = $('#tags').val();
-        dataDiary['featureImage'] = $(':input:checked').val();
-        dataDiary['status'] = 'posted';
+    dataDiary['id'] = $('div#inject-id').text();
+    dataDiary['title'] = $('#title').val();
+    dataDiary['diary'] = CKEDITOR.instances['diary'].getData();
+    dataDiary['tags'] = $('#tags').val();
+    dataDiary['featureImage'] = $(':input:checked').val();
+    dataDiary['status'] = 'draft';
 
-        save(dataDiary);
-        return false;
-    });
+    save(dataDiary);
+    return false;
+});
+
+$('button.btn-warning').click(function(){ 
+    
+    dataDiary['id'] = $('div#inject-id').text();
+    dataDiary['title'] = $('#title').val();
+    dataDiary['diary'] = CKEDITOR.instances['diary'].getData();
+    dataDiary['tags'] = $('#tags').val();
+    dataDiary['featureImage'] = $(':input:checked').val();
+    dataDiary['status'] = 'posted';
+
+    save(dataDiary);
+    return false;
+});
 
 
 function save(data) {
@@ -75,18 +75,35 @@ function save(data) {
 
 $("#selectall").click(function () {
     $('.case').prop('checked', this.checked);
+    var count = $('input:checked').length;
+    if (count>0) {
+        $('button.btn-apply').removeClass('disabled');
+    } else {
+        $('button.btn-apply').addClass('disabled');
+    }
 });
 
 $(".case").click(function(){
-
     if($(".case").length == $(".case:checked").length) {
         $("#selectall").attr("checked", "checked");
     } else {
         $("#selectall").removeAttr("checked");
     }
-
 });
 
 setTimeout(function(){
   $('div.alert-success').addClass('hidden');
 }, 5000);
+
+// FOR DELETE BULK BUTTON DISABLED
+$('.case').click(function(){  
+var count_check_diary = $('input:checked').length;
+
+    if (count_check_diary>=1) {
+        $('button.btn-apply').removeClass('disabled');
+    } if (count_check_diary==0) {
+        $('button.btn-apply').addClass('disabled');
+    } else {
+        $('button.btn-apply').removeClass('disabled');
+    }
+});

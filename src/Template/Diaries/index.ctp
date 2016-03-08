@@ -13,7 +13,7 @@
 				<div class="diaries index large-9 medium-8 columns content">
 					<a href="/diaries/add" class="btn btn-default"><i class="fa fa-plus"></i> Add New Diary</a>
 				    <h3><?= __('Diaries') ?></h3>
-				    <div class="col-md-9">
+				    <div class="col-md-8">
 					    <div class="row">
 					    	<form action="/diaries" method="GET">
 							    <div class="form-group">
@@ -25,7 +25,7 @@
 				    </div>
 				    <!-- BEGIN FORM -->
 				    <?= $this->Form->create($diaries) ?>
-				    <div class="col-md-2">
+				    <div class="col-md-3">
 					    <div class="row">
 						    <select name="status" class="form-control">
 						    	<option value="delete_permanently">Delete Permanently</option>
@@ -35,7 +35,7 @@
 					    </div>
 				    </div>
 				    <div class="col-md-1">
-						<button type="submit" class="btn btn-apply">Apply</button>
+						<button type="submit" class="btn btn-apply disabled">Apply</button>
 						<div class="distance-button"></div>
 					</div>
 				    <?= $this->Flash->render('succes_bulk_update') ?>

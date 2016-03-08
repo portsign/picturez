@@ -5,7 +5,7 @@
 </div>
   <!-- Header -->
   <header class="header">
-	<div class="header-nav inner-sticky-wrapper">
+	<div class="header-nav">
 
 	<?php
 		$loged = $this->request->session()->read(['Auth','User','id']);
@@ -13,7 +13,7 @@
 	?>
 
 	  <!-- menu -->
-	  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+	  <nav class="navbar navbar-default navbar-scrolltofixed">
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-12">
@@ -24,7 +24,6 @@
 			  <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" role="menu" style="height: 1px;">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"> <a href="/users/timeline" class="dropdown-toggle">Timeline</a></li>
-					<li class="dropdown"> <a href="/popular-quotes" class="dropdown-toggle">Popular Quotes</a></li>
 					<li class="dropdown"> <a href="/popular-diaries" class="dropdown-toggle">Popular Diaries</a></li>
 					<li class="dropdown"> <a href="/<?= $this->request->session()->read(['Auth','User','username']) ?>" class="dropdown-toggle"><i class="fa fa-send-o"></i> My Page</a></li>
 					<li class="dropdown"> <a href="/users/home" class="dropdown-toggle"><i class="fa fa-square"></i> Menu</a></li>
@@ -52,7 +51,7 @@
 	  <?php } else { ?>
 
 	  <!-- menu -->
-	  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+	  <nav role="navigation" class="navbar navbar-default navbar-scrolltofixed">
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-12">

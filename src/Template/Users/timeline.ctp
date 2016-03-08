@@ -46,19 +46,25 @@
         <div class="material-button-anim">
           <ul class="list-inline" id="options">
             <li class="option">
-              <button class="material-button option1" type="button">
-                <span class="fa fa-pencil" aria-hidden="true"></span>
-              </button>
+              <a href="/diaries/add">
+	              <button class="material-button option1" type="button">
+	                <span class="fa fa-pencil" aria-hidden="true"></span>
+	              </button>
+              </a>
             </li>
             <li class="option">
-              <button class="material-button option2" type="button">
-                <span class="fa fa-image" aria-hidden="true"></span>
-              </button>
+              <a href="/quotes">
+	              <button class="material-button option2" type="button">
+	                <span class="fa fa-image" aria-hidden="true"></span>
+	              </button>
+              </a>
             </li>
             <li class="option">
-              <button class="material-button option3" type="button">
-                <span class="fa fa-plus-circle" aria-hidden="true"></span>
-              </button>
+              <a href="/">
+	              <button class="material-button option3" type="button">
+	                <span class="fa fa-plus-circle" aria-hidden="true"></span>
+	              </button>
+              </a>
             </li>
           </ul>
           <button class="material-button material-button-toggle" type="button">

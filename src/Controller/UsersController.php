@@ -187,7 +187,7 @@ class UsersController extends AppController
         ])->first();
 
         if ($user==null) {
-            return $this->redirect(['action' => 'noaccount']);
+            return $this->redirect('/noaccount');
         }
 
         $this->set('user', $user);

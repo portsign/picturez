@@ -5,7 +5,7 @@
 	    <div class="row">
 			<div class="col-md-12">
 <?php 
-// debug($diary->feature_image);exit;
+// debug($diary->status);exit;
 ?>
 				<div class="distance-button"></div>
 				<ol class="breadcrumb">
@@ -119,8 +119,15 @@
 						</div>
 				    	<!-- Large Modal Feature Image End-->
 				    </fieldset>
+				    <?php 
+				    if ($diary->status=='posted') {
+				    	$button = 'Update';
+				    } else {
+				    	$button = 'Publish';
+				    }
+				    ?>
 					<div class="distance-button"></div>
-				    <?= $this->Form->button(__('Update'), ['class' => 'btn btn-warning']) ?>
+				    <?= $this->Form->button(__($button), ['class' => 'btn btn-warning']) ?>
 				    <?= $this->Form->button(__('Save to draft'), ['class' => 'btn btn-success']) ?>
 					<a href="/diaries" class="btn btn-default pull-right">Cancel</a>
 				    <?= $this->Form->end() ?>

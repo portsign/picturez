@@ -105,7 +105,7 @@
 				    	<!-- Large Modal Feature Image End-->
 
 					    </fieldset><div class="distance-button"></div>
-					    <?= $this->Form->button(__('Post'), ['name' => 'post', 'value' => true, 'class' => 'btn btn-warning']) ?>
+					    <?= $this->Form->button(__('Publish'), ['name' => 'post', 'value' => true, 'class' => 'btn btn-warning']) ?>
 					    <?= $this->Form->button(__('Save'), ['name' => 'draft', 'value' => false, 'class' => 'btn btn-success']) ?><a href="/diaries" class="btn btn-default pull-right">Cancel</a><div class="distance-button"></div>
 					    <?= $this->Form->end() ?>
 				</div>

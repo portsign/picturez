@@ -19,12 +19,12 @@ theme. But don't modify main-style.css file.
 }
 .material-button-anim {
 	position: fixed;
-	padding: 0px 15px 27px;
-	top: 60%;
-	right: 1%;
-	text-align: center;
-	max-width: 320px;
-	margin: 0 auto 20px;
+  padding: 35px;
+  top: 65%;
+  right: 4%;
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto 20px;
 }
 
 .material-button {
@@ -444,4 +444,146 @@ img.avatar {
 .activity-mini {
   padding-right: 15px;
   float: left;
+}
+
+
+/*PROFILE DETAIL*/
+.modal-body {
+    padding: 20px;
+}
+.modal-content {
+    box-shadow: none;
+    border: 1px solid #eaeaea;
+    border-radius: 0px;
+}
+.profile-back {
+    margin: 0px;
+    background-image: url('/img/background_profile.png');
+}
+.media-heading {
+  color: #FFF;
+}
+.gallerycaption-bottom {
+  font-size: 14px;
+}
+div.container h1 {
+    font-size: 10rem!important;
+}
+.alert-link {
+    font-size: 12px;
+}
+
+
+/*STEP BY STEP*/
+.multistep {
+    margin-left: -90px;
+}
+.multistep .multistep-step {
+    padding: 0;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.multistep .multistep-step .multistep-stepname {
+    margin-bottom: 16px;
+    color: #595959;
+    font-size: 1.0rem;
+    white-space: nowrap;
+}
+
+.multistep .multistep-step .multistep-dot {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-top: -16px;
+    margin-left: -15.5px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    /* Inner Dot */
+}
+
+.multistep .multistep-step .multistep-dot:after {
+    content: ' ';
+    border-radius: 50px;
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    background: #e0e0e0;
+}
+
+.multistep .multistep-step .progress {
+    position: absolute;
+    width: 100%;
+    height: 10.56px;
+    margin-top: -5.28px;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.multistep .multistep-step .progress .progress-bar {
+    width: 0px;
+    box-shadow: none;
+    background: #fbe8aa;
+}
+
+.multistep .multistep-step:first-child > .progress {
+    left: 50%;
+    width: 50%;
+}
+
+.multistep .multistep-step:last-child > .progress {
+    width: 50%;
+}
+
+.multistep .multistep-step.complete .multistep-dot {
+    background: #fbe8aa;
+}
+
+.multistep .multistep-step.complete .multistep-dot:after {
+    background: #fbbd19;
+}
+
+.multistep .multistep-step.complete .progress > .progress-bar {
+    width: 100%;
+}
+
+.multistep .multistep-step.next:hover .multistep-dot {
+    background: #fbe8aa;
+}
+
+.multistep .multistep-step.next:hover .multistep-dot:after {
+    background: #fbbd19;
+}
+
+.multistep .multistep-step.current .multistep-dot {
+    background: #fbe8aa;
+}
+
+    .multistep .multistep-step.current .multistep-dot:after {
+        background: #fbbd19;
+    }
+
+.multistep .multistep-step.current .progress > .progress-bar {
+    width: 50%;
+}
+
+.multistep .multistep-step.current:first-child > .progress > .progress-bar {
+    width: 0%;
+}
+
+.multistep .multistep-step.current:last-child > .progress > .progress-bar {
+    width: 100%;
+}
+
+.multistep .multistep-step a.multistep-dot {
+    pointer-events: none;
+}
+
+.multistep .multistep-step.next a.multistep-dot {
+    pointer-events: all;
 }

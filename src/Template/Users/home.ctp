@@ -3,14 +3,10 @@
 <section>
 <div class="container pt-0 pb-0">
 	<div class="section-content">
-	    <div class="row">
 			<div class="col-md-12">
 				<!-- Section: Services -->
+				<br />
 			    <section id="services">
-			      <div class="container">
-			        <div class="section-content">
-			          <div class="row">
-			          </div>
 			          <div class="row multi-row-clearfix">
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<a href="/users/timeline">
@@ -56,11 +52,8 @@
 					    </a>
 			            </div>
 			          </div>
-			        </div>
-			      </div>
 			    </section>
 			</div>
-		</div>
 	</div>
 </div>
 </section>
