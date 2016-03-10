@@ -107,3 +107,6 @@ var count_check_diary = $('input:checked').length;
         $('button.btn-apply').removeClass('disabled');
     }
 });
+
+
+// SEARCH FORM - CREATE QUOTES

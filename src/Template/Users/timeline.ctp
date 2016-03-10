@@ -8,7 +8,6 @@
 
 
 				<section>
-			        <div class="container">
 				        <div class="esc-heading lr-line left-heading">
 				          <h3><span>Timeline</span></h3>
 				        </div>
@@ -36,13 +35,14 @@
 				            </div>
 				        </div>
 
-			        </div>
 			    </section>
 
 			</div>
 		</div>
 	</div>
-
+<?php
+	// debug($this->request->session()->read(['Auth','User','username']));
+?>
         <div class="material-button-anim">
           <ul class="list-inline" id="options">
             <li class="option">
@@ -53,23 +53,23 @@
               </a>
             </li>
             <li class="option">
-              <a href="/quotes">
+              <a href="/quotes/add">
 	              <button class="material-button option2" type="button">
 	                <span class="fa fa-image" aria-hidden="true"></span>
 	              </button>
               </a>
             </li>
             <li class="option">
-              <a href="/">
+              <a href="/<?= $this->request->session()->read(['Auth','User','username']) ?>">
 	              <button class="material-button option3" type="button">
-	                <span class="fa fa-plus-circle" aria-hidden="true"></span>
+	                <span class="fa fa-user" aria-hidden="true"></span>
 	              </button>
               </a>
             </li>
           </ul>
-          <button class="material-button material-button-toggle" type="button">
-            <span class="fa fa-plus" aria-hidden="true"></span>
-          </button>
+	          <button class="material-button material-button-toggle" type="button">
+	            <span class="fa fa-plus" aria-hidden="true"></span>
+	          </button>
         </div>
 </section>
 
