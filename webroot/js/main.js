@@ -189,11 +189,26 @@ $('a.btn-cancel').click(function(){
     $('#ready_image').addClass('hidden');
     $(this).addClass('hidden');
     $('button.nextBtn').attr('disabled', true);
-    $('.col-md-6 .row').find('input').remove();
-    $('.col-md-6 .row').find('textarea').remove();
-
+    $('.add-description .row').find('input').remove();
+    $('.add-description .row').find('textarea').remove();
+    $('#place_pic img').remove();
+    $('.stepwizard-step').eq(1).find('a').attr('disabled', true);
 });
+
+
 $('#readyNext').click(function(){
     $('').appendTo('#place_pic');
-    $('#ready_image img').clone().appendTo('#step-2 #place_pic');
+    if ($('#place_pic img').length==0){
+        $('#ready_image img').clone().appendTo('#step-2 #place_pic');
+    } else {
+
+    }
 });
+
+// $('#place_pic div.bubble-slider-wrap div.bubble-slider-track div.bubble-slider-thumb').click(function(){ 
+//     // var val = $('#example').val();
+//     // console.log(val);
+//     alert(123);
+
+// });
+

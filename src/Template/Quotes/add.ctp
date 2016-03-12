@@ -42,14 +42,14 @@
                                 <h1 id="1_choose"><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="pe-7s-photo"></i></a></h1>
                                 
                                 <p id="2_choose">Choose Picture</p>
-                                <div class="col-md-6">
+                                <div class="col-md-6 add-description">
                                     <div id="ready_image" class="hidden">
                                     </div>
                                 </div>
                                 
 
                             </center>
-                                <div class="col-md-6">
+                                <div class="col-md-6 add-description">
                                     <div class="row">
 
                                     </div>
@@ -156,9 +156,66 @@
                     <!-- Wizard STEP 2 -->
                     <div class="row setup-content" id="step-2">
                         <div class="col-sm-12">
+                        <style type="text/css">
+                            h2 { 
+                               position: absolute; 
+                               top: 200px; 
+                               left: 0; 
+                               width: 100%; 
+                               font-size: 28px;
+                            }
+                            #place_pic {
+                                position: relative; 
+                                width: 100%; /* for IE 6 */
+                            }
+                            h2 span { 
+                               color: white; 
+                               font: bold 24px/45px Helvetica, Sans-Serif; 
+                               letter-spacing: -1px;  
+                               background: rgb(0, 0, 0); /* fallback color */
+                               background: rgba(0, 0, 0, 0.7);
+                               padding: 10px; 
+                               font-size: 28px;
+                            }
+                        </style>
                             <!--  -->
+                            <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="50" data-color="#6324B5" data-decimals="0" class="bubble-slider">
+                            
                             <div id="place_pic">
-                                <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="50" data-color="#6324B5" data-decimals="0" class="bubble-slider">
+                                <h2 class="h2-custom-picture"><span>Lorem Ipsum Dolor Sit Amet</span></h2>
+                            </div>
+                            <br />
+                            <textarea class="form-control" placeholder="Type Your Qoute Here"></textarea>
+                            <div class="col-xs-6">
+                                <br />
+                                <br />
+                                <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="50" data-color="#1C8EC5" data-decimals="0" class="bubble-slider">
+                            </div>
+                            <div class="col-xs-6">
+                                <br />
+                                <br />
+                                <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="50" data-color="#12C7AC" data-decimals="0" class="bubble-slider">    
+                            </div>
+                            <div class="col-md-12">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span>Text Position</span>
+                                    <select class="pull-right" style="width: 200px;">
+                                        <option>Left</option>
+                                        <option>Center</option>
+                                        <option>Right</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span>Text Bold</span>
+                                    <div class="material-switch pull-right">
+                                        <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                                        <label for="someSwitchOptionDefault" class="label-default"></label>
+                                    </div>
+                                </li>
+                            </ul>
                             </div>
                             <br />
                             <button class="btn btn-default nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
