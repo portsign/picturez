@@ -17,7 +17,7 @@
 	<link href="/css/responsive.css" rel="stylesheet" type="text/css">
 	<link href="/css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="/css/jquery.tagsinput.css" />
-
+	<link href="/css/single-range-slider/bubble-slider.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -35,6 +35,7 @@
 <!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 <script src="/js/jquery-plugin-collection.js"></script>
 <script src="/js/jquery.tagsinput.js"></script>
+<script src="/js/single-range-slider/jquery.bubble-slider.js"></script>
 <script src="/js/custom.js"></script>
 <script src="/js/main.js"></script>
 <script>
@@ -52,67 +53,7 @@ $(document).ready(function () {
 });
 </script>
 <script>
-    //remove modal when checked radio button image
- 	$(document).ready(function(){
- 		$('label.image-toggler').on('click', function(){
- 			$('a.btn-default').eq(0).addClass('hidden');
- 			$('a.btn-danger').removeClass('hidden');
- 			$(this).clone('img').appendTo("div#hidden_radio");
- 			$('label.image-toggler img').eq(0).addClass("prev-thumb");
- 			$('label.image-toggler').eq(0).addClass("disabled");
- 		});
- 		$("a.btn-danger").click(function() {
- 			$('a.btn-default').eq(0).removeClass('hidden');
- 			$('a.btn-danger').addClass('hidden');
- 			$('div#selected-image label').remove();
- 			$(':input:checked').remove();
- 		});
- 	});
-
- 	// STEP WIZARD
-	$(document).ready(function () {
-
-	    var navListItems = $('div.setup-panel div a'),
-	            allWells = $('.setup-content'),
-	            allNextBtn = $('.nextBtn');
-
-	    allWells.hide();
-
-	    navListItems.click(function (e) {
-	        e.preventDefault();
-	        var $target = $($(this).attr('href')),
-	                $item = $(this);
-
-	        if (!$item.hasClass('disabled')) {
-	            navListItems.removeClass('btn-default').addClass('btn-primary');
-	            $item.addClass('btn-primary');
-	            allWells.hide();
-	            $target.show();
-	            $target.find('input:eq(0)').focus();
-	        }
-	    });
-
-	    allNextBtn.click(function(){
-	        var curStep = $(this).closest(".setup-content"),
-	            curStepBtn = curStep.attr("id"),
-	            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-	            curInputs = curStep.find("input[type='text'],input[type='email'],select[id='industry']"),
-	            isValid = true;
-
-	        $(".form-group").removeClass("has-error");
-	        for(var i=0; i<curInputs.length; i++){
-	            if (!curInputs[i].validity.valid){
-	                isValid = false;
-	                $(curInputs[i]).closest(".form-group").addClass("has-error");
-	            }
-	        }
-
-	        if (isValid)
-	            nextStepWizard.removeAttr('disabled').trigger('click');
-	    });
-
-	    $('div.setup-panel div a.btn-primary').trigger('click');
-	});
+   
 </script>
 </body>
 </html>

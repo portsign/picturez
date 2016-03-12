@@ -109,4 +109,91 @@ var count_check_diary = $('input:checked').length;
 });
 
 
-// SEARCH FORM - CREATE QUOTES
+// MODAL - CREATE QUOTES
+ //remove modal when checked radio button image
+    $(document).ready(function(){
+        $('label.image-toggler').on('click', function(){
+            $('a.btn-default').eq(0).addClass('hidden');
+            $('a.btn-danger').removeClass('hidden');
+            $(this).clone('img').appendTo("div#hidden_radio");
+            $('label.image-toggler img').eq(0).addClass("prev-thumb");
+            $('label.image-toggler').eq(0).addClass("disabled");
+        });
+        $("a.btn-danger").click(function() {
+            $('a.btn-default').eq(0).removeClass('hidden');
+            $('a.btn-danger').addClass('hidden');
+            $('div#selected-image label').remove();
+            $(':input:checked').remove();
+        });
+    });
+
+    // STEP WIZARD
+    $(document).ready(function () {
+
+        var navListItems = $('div.setup-panel div a'),
+                allWells = $('.setup-content'),
+                allNextBtn = $('.nextBtn');
+
+        allWells.hide();
+
+        navListItems.click(function (e) {
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+                    $item = $(this);
+
+            if (!$item.hasClass('disabled')) {
+                navListItems.removeClass('btn-default').addClass('btn-primary');
+                $item.addClass('btn-primary');
+                allWells.hide();
+                $target.show();
+                $target.find('input:eq(0)').focus();
+            }
+        });
+
+        allNextBtn.click(function(){
+            var curStep = $(this).closest(".setup-content"),
+                curStepBtn = curStep.attr("id"),
+                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                curInputs = curStep.find("input[type='text'],input[type='email'],select[id='industry']"),
+                isValid = true;
+
+            $(".form-group").removeClass("has-error");
+            for(var i=0; i<curInputs.length; i++){
+                if (!curInputs[i].validity.valid){
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                }
+            }
+
+            if (isValid)
+                nextStepWizard.removeAttr('disabled').trigger('click');
+        });
+
+        $('div.setup-panel div a.btn-primary').trigger('click');
+    });
+
+$('.image-toggler-quotes img').click(function(){
+    // console.log($(this).find('img').attr('src'));
+    $('<img src='+$(this).attr('src')+' class="img-responsive" />').appendTo('#ready_image');
+    $('#1_choose').addClass('hidden'); 
+    $('#2_choose').addClass('hidden');
+    $('#ready_image').removeClass('hidden');
+    $('a.btn-cancel').removeClass('hidden');
+    $('button.nextBtn').attr('disabled', false);
+    $('<input type="text" class="form-control" Placeholder="Add Title" style="margin-bottom:20px" autofocus /><textarea class="form-control" rows="6" style="margin-bottom:20px" Placeholder="Add Short Description"></textarea>').appendTo('.col-md-6 .row');
+});
+$('a.btn-cancel').click(function(){
+    $('#ready_image').find('img').remove();
+    $('#1_choose').removeClass('hidden  '); 
+    $('#2_choose').removeClass('hidden');
+    $('#ready_image').addClass('hidden');
+    $(this).addClass('hidden');
+    $('button.nextBtn').attr('disabled', true);
+    $('.col-md-6 .row').find('input').remove();
+    $('.col-md-6 .row').find('textarea').remove();
+
+});
+$('#readyNext').click(function(){
+    $('').appendTo('#place_pic');
+    $('#ready_image img').clone().appendTo('#step-2 #place_pic');
+});

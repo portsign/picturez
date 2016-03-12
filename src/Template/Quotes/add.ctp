@@ -24,8 +24,11 @@
                 </div>
             </div>
             <!-- Step Wizard END -->
+            <?php 
+            // debug($data)
+            ?>
+
             <!-- quote form -->
-            <form class="form-horizontal" role="form" method="post" autocomplete="on" spellcheck="true">
             
                 <fieldset><!-- form contents -->
 
@@ -36,9 +39,22 @@
                             <!-- Large modal -->
                             <div class="distance-button"></div>
                             <center>
-                                <h1><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="pe-7s-photo"></i></a></h1>
-                                <p>Choose Picture</p>
+                                <h1 id="1_choose"><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="pe-7s-photo"></i></a></h1>
+                                
+                                <p id="2_choose">Choose Picture</p>
+                                <div class="col-md-6">
+                                    <div id="ready_image" class="hidden">
+                                    </div>
+                                </div>
+                                
+
                             </center>
+                                <div class="col-md-6">
+                                    <div class="row">
+
+                                    </div>
+                                </div>
+                            
                             <div class="distance-button"></div>
 
                             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -51,73 +67,79 @@
                                         <span id="search_concept">Category</span> <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#id"><i class="fa fa-angle-double-right"></i> ID</a></li>
-                                            <li><a href="#name"><i class="fa fa-angle-double-right"></i> Name</a></li>
-                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Description</a></li>
+                                            <li><a href="#id"><i class="fa fa-angle-double-right"></i> Nature Wallpaper</a></li>
+                                            <li><a href="#name"><i class="fa fa-angle-double-right"></i> Landscape</a></li>
+                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Abstract</a></li>
+                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Tech</a></li>
+                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Animals</a></li>
+                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Rain</a></li>
+                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Cloud</a></li>
+                                            <li><a href="#description"><i class="fa fa-angle-double-right"></i> Flame</a></li>
                                         </ul>
                                     </div>
                                     <input type="hidden" name="search_param" value="name" id="search_param">         
-                                    <input type="text" class="form-control" name="q" placeholder="Search.." id="search_key" value="">
+                                    <input type="text" class="form-control" name="q" placeholder="Search by name.." id="search_key" value="">
                                     <span class="input-group-btn">
-                                            <button class="btn btn-info" type="submit">  Search  </button>
+                                        <button class="btn btn-info" type="submit">  Search  </button>
                                     </span>
                                 </div>
                                 
                                 <div class="distance-button"></div>
-                                <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-default image-toggler" data-image-id="#image1">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/def_feat_pic.jpg" id="option2"><a data-dismiss="modal" aria-label="Close"> <img src="/img/def_feat_pic.jpg" width="166" /></a>
+                                <center>Available Pictures</center>
+                                    <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image1">
+                                                <a data-dismiss="modal" aria-label="Close"> <img src="/img/def_feat_pic.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/1.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/1.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/1.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/2.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/2.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/2.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/3.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/3.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/3.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/4.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/4.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/4.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/5.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/5.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/5.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/6.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/6.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/6.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/7.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/7.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/7.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/8.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/8.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/8.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/9.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/9.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/9.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/10.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/10.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/10.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/11.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/11.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/11.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/12.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/12.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/12.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/13.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/13.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/13.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/14.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/14.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/14.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/15.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/15.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/15.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/16.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/16.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/16.jpg" width="166" /></a>
                                             </label>
-                                            <label class="btn btn-default image-toggler" data-image-id="#image2">
-                                                <input type="radio" name="featureImage" data-dismiss="modal" aria-label="Close" value="/img/17.jpg" id="option2"> <a data-dismiss="modal" aria-label="Close"><img src="/img/17.jpg" width="166" /></a>
+                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/17.jpg" width="166" /></a>
                                             </label>
                                         </div>
 
@@ -125,7 +147,8 @@
                               </div>
                             </div>
 
-                            <button class="btn btn-default nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                            <a class="btn btn-primary btn-cancel hidden">Change Picture</a>
+                            <button id="readyNext" class="btn btn-default nextBtn 1_next col-xs-3 pull-right" disabled="disabled" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
                         </div>
                     </div>
                     <!-- Wizard STEP 1 END -->
@@ -134,6 +157,10 @@
                     <div class="row setup-content" id="step-2">
                         <div class="col-sm-12">
                             <!--  -->
+                            <div id="place_pic">
+                                <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="50" data-color="#6324B5" data-decimals="0" class="bubble-slider">
+                            </div>
+                            <br />
                             <button class="btn btn-default nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
                         </div>
                     </div>
@@ -148,7 +175,6 @@
                     </div>
                     <!-- Wizard STEP 3 END -->
                 </fieldset><!-- form contents END -->
-            </form>
 
                     <br />
                 </div>

@@ -191,6 +191,9 @@ theme. But don't modify main-style.css file.
 .image-toggler {
     padding: 4px;
 }
+.image-toggler-quotes {
+    padding: 4px;
+}
 .prev-thumb {
     width: 215px;
 }

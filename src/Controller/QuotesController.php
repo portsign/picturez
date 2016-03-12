@@ -49,6 +49,7 @@ class QuotesController extends AppController
     public function add()
     {
         $quote = $this->Quotes->newEntity();
+
         if ($this->request->is('post')) {
             $quote = $this->Quotes->patchEntity($quote, $this->request->data);
             if ($this->Quotes->save($quote)) {
@@ -58,8 +59,15 @@ class QuotesController extends AppController
                 $this->Flash->error(__('The quote could not be saved. Please, try again.'));
             }
         }
+
         $this->set(compact('quote'));
         $this->set('_serialize', ['quote']);
+    }
+
+    public function grabImage()
+    {
+
+        
     }
 
     /**
