@@ -205,10 +205,21 @@ $('#readyNext').click(function(){
     }
 });
 
-// $('#place_pic div.bubble-slider-wrap div.bubble-slider-track div.bubble-slider-thumb').click(function(){ 
-//     // var val = $('#example').val();
-//     // console.log(val);
-//     alert(123);
+// ON SLIDER BLUR
+$(document).ready(function() {
+    $('div.bubble-slider-thumb').eq(0).slider({
+        change: function(event, ui) {
+            if (event.originalEvent) {
 
-// });
+                // event
+                // console.log($('.getBlur').eq(0).text());
+                var valblur = $('.getBlur').eq(0).text();
+                $('#place_pic img').css({'-webkit-filter': 'blur('+valblur+'px)'});
 
+            }
+            else {
+                // Programatic Code
+            }
+        }
+    });
+});

@@ -158,31 +158,33 @@
                         <div class="col-sm-12">
                         <style type="text/css">
                             h2 { 
-                               position: absolute; 
-                               top: 200px; 
-                               left: 0; 
-                               width: 100%; 
-                               font-size: 28px;
+                                position: absolute; 
+                                top: 300px; 
+                                left: 15; 
+                                z-index: 9999;
+                                width: 100%; 
+                                font-size: 28px;
                             }
                             #place_pic {
                                 position: relative; 
                                 width: 100%; /* for IE 6 */
                             }
                             h2 span { 
-                               color: white; 
-                               font: bold 24px/45px Helvetica, Sans-Serif; 
-                               letter-spacing: -1px;  
-                               background: rgb(0, 0, 0); /* fallback color */
-                               background: rgba(0, 0, 0, 0.7);
-                               padding: 10px; 
-                               font-size: 28px;
+                                color: white; 
+                                font: bold 24px/45px Helvetica, Sans-Serif; 
+                                letter-spacing: -1px;  
+                                background: rgb(0, 0, 0); /* fallback color */
+                                background: rgba(0, 0, 0, 0.7);
+                                padding: 10px; 
+                                font-size: 28px;
                             }
                         </style>
                             <!--  -->
+                            <div id="player">&nbsp;</div> 
                             <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="50" data-color="#6324B5" data-decimals="0" class="bubble-slider">
                             
-                            <div id="place_pic">
                                 <h2 class="h2-custom-picture"><span>Lorem Ipsum Dolor Sit Amet</span></h2>
+                            <div id="place_pic">
                             </div>
                             <br />
                             <textarea class="form-control" placeholder="Type Your Qoute Here"></textarea>
