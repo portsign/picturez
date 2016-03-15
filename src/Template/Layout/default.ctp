@@ -26,9 +26,7 @@
 	<![endif]-->
 </head>
 <body class="minimal-layout bg-light-gray">
-
 <?= $this->fetch('content') ?>
-
 <script src="/js/jquery-2.1.1.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -52,9 +50,6 @@ $(document).ready(function () {
 	   'width':'100%',
 	});
 });
-</script>
-<script>
-   
 </script>
 </body>
 </html>

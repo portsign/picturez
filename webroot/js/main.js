@@ -1,4 +1,5 @@
 
+// THIS AJAX SAVE DIARY--------------------------------------------------------------------
 var dataDiary = new Array();
 
 $('button.btn-success').click(function(){ 
@@ -28,11 +29,10 @@ $('button.btn-warning').click(function(){
 });
 
 
-function save(data) {
+function save(data) 
+{
     $("div.uil-reload-css").removeClass('hidden');
     var url = location.protocol+'//'+location.hostname+'/diaries/ajaxSaveDiary';
-
-    console.log(dataDiary['id']);
 
     $.ajax({
         url: url,
@@ -48,7 +48,7 @@ function save(data) {
         beforeSend  : function() {
             
         },
-        success : function(response){
+        success : function(response) {
             console.log(response);
             $("div.uil-reload-css").addClass('hidden');
             // tambah tulisan kalo sudah save;
@@ -62,7 +62,7 @@ function save(data) {
                 window.location.href = "/diaries";
             }
         },
-        error: function(){
+        error: function() {
             alert('Fuck');
         }
         
@@ -70,10 +70,10 @@ function save(data) {
 
 }
 
-
-//BULK ACTION ON LIST DIARIES
+//BULK ACTION ON LIST DIARIES-------------------------------------------------------------
 
 $("#selectall").click(function () {
+
     $('.case').prop('checked', this.checked);
     var count = $('input:checked').length;
     if (count>0) {
@@ -81,22 +81,25 @@ $("#selectall").click(function () {
     } else {
         $('button.btn-apply').addClass('disabled');
     }
+
 });
 
-$(".case").click(function(){
+$(".case").click(function() {
+
     if($(".case").length == $(".case:checked").length) {
         $("#selectall").attr("checked", "checked");
     } else {
         $("#selectall").removeAttr("checked");
     }
+
 });
 
-setTimeout(function(){
-  $('div.alert-success').addClass('hidden');
+setTimeout(function() {
+    $('div.alert-success').addClass('hidden');
 }, 5000);
 
-// FOR DELETE BULK BUTTON DISABLED
-$('.case').click(function(){  
+// FOR DELETE BULK BUTTON DISABLED----------------------------------------------------------
+$('.case').click(function() {  
 var count_check_diary = $('input:checked').length;
 
     if (count_check_diary>=1) {
@@ -109,9 +112,10 @@ var count_check_diary = $('input:checked').length;
 });
 
 
-// MODAL - CREATE QUOTES
- //remove modal when checked radio button image
-    $(document).ready(function(){
+// MODAL - CREATE QUOTES-------------------------------------------------------------------
+    //remove modal when checked radio button image
+    $(document).ready(function() {
+
         $('label.image-toggler').on('click', function(){
             $('a.btn-default').eq(0).addClass('hidden');
             $('a.btn-danger').removeClass('hidden');
@@ -125,9 +129,10 @@ var count_check_diary = $('input:checked').length;
             $('div#selected-image label').remove();
             $(':input:checked').remove();
         });
+
     });
 
-    // STEP WIZARD
+    // STEP WIZARD 
     $(document).ready(function () {
 
         var navListItems = $('div.setup-panel div a'),
@@ -164,16 +169,16 @@ var count_check_diary = $('input:checked').length;
                     $(curInputs[i]).closest(".form-group").addClass("has-error");
                 }
             }
-
             if (isValid)
                 nextStepWizard.removeAttr('disabled').trigger('click');
         });
 
         $('div.setup-panel div a.btn-primary').trigger('click');
+
     });
 
-$('.image-toggler-quotes img').click(function(){
-    // console.log($(this).find('img').attr('src'));
+$('.image-toggler-quotes img').click(function() {
+
     $('<img src='+$(this).attr('src')+' class="img-responsive" />').appendTo('#ready_image');
     $('#1_choose').addClass('hidden'); 
     $('#2_choose').addClass('hidden');
@@ -181,8 +186,11 @@ $('.image-toggler-quotes img').click(function(){
     $('a.btn-cancel').removeClass('hidden');
     $('button.nextBtn').attr('disabled', false);
     $('<input type="text" class="form-control" Placeholder="Add Title" style="margin-bottom:20px" autofocus /><textarea class="form-control" rows="6" style="margin-bottom:20px" Placeholder="Add Short Description"></textarea>').appendTo('.col-md-6 .row');
+
 });
-$('a.btn-cancel').click(function(){
+
+$('a.btn-cancel').click(function() {
+
     $('#ready_image').find('img').remove();
     $('#1_choose').removeClass('hidden  '); 
     $('#2_choose').removeClass('hidden');
@@ -193,10 +201,11 @@ $('a.btn-cancel').click(function(){
     $('.add-description .row').find('textarea').remove();
     $('#place_pic img').remove();
     $('.stepwizard-step').eq(1).find('a').attr('disabled', true);
+
 });
 
 
-$('#readyNext').click(function(){
+$('#readyNext').click(function() {
     if ($('#place_pic img').length==0){
         $('#ready_image img').clone().appendTo('#step-2 #place_pic');
     } else {
@@ -207,7 +216,8 @@ $('#readyNext').click(function(){
 $(document).ready(function() {
     // TEXT ADD
     var get_height = 0;
-    $('#addtext').on('change keyup keydown paste', function(){
+    $('#addtext').on('change keyup keydown paste', function() {
+
         var thetext = $('#addtext').val();
         $('.h2-custom-picture span').text(thetext);
 
@@ -223,6 +233,7 @@ $(document).ready(function() {
             $('.h2-custom-picture span').css({'font-size' : dec_font + 'vw'});
             $('.h2-custom-picture').css({'margin-top' : '0px'})
         }
+
     });
     // ON SLIDER BLUR
     $('div.bubble-slider-thumb').eq(0).slider({
@@ -255,7 +266,8 @@ $(document).ready(function() {
         }
     });
     // CHANGE TEXT POSITION
-    $('select').eq(0).change(function(){ 
+    $('select').eq(0).change(function() { 
+
         var valPosition = $('select').val();
         if (valPosition=='left') {
             $('.h2-custom-picture').removeAttr('style');
@@ -269,17 +281,6 @@ $(document).ready(function() {
             $('.h2-custom-picture').removeAttr('style');
             $('.h2-custom-picture').css({'right':'0px', 'text-align':'right'})
         }
-        // alert(456);
+
     });
 });
-
-
-// $(document).ready(function(){
-//     var get_height = $('.h2-custom-picture')[0].scrollHeight;
-//     var ch_font = '-10';
-//     $('#addtext').on('change keyup paste', function(){
-//         if (get_height>300) {
-//             $('.h2-custom-picture span').css({'font-size': ''+ch_font+'px'});
-//         }
-//     });
-// });

@@ -6,32 +6,26 @@
             <div class="col-md-12">
                 <div class="distance-button"></div>
 
-                    <!-- Step Wizard -->
-            <div class="stepwizard">
-                <div class="stepwizard-row setup-panel">
-                    <div class="stepwizard-step">
-                        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                        <p>Step 1</p>
-                    </div>
-                    <div class="stepwizard-step">
-                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                        <p>Step 2</p>
-                    </div>
-                    <div class="stepwizard-step">
-                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                        <p>Step 3</p>
+                <!-- Step Wizard -->
+                <div class="stepwizard">
+                    <div class="stepwizard-row setup-panel">
+                        <div class="stepwizard-step">
+                            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                            <p>Step 1</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                            <p>Step 2</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                            <p>Step 3</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Step Wizard END -->
-            <?php 
-            // debug($data)
-            ?>
-
-            <!-- quote form -->
-            
+                <!-- Step Wizard END -->
+                <!-- quote form -->
                 <fieldset><!-- form contents -->
-
                     <!-- Wizard STEP 1 -->
                     <div class="row setup-content" id="step-1">
                         <div class="col-sm-12">
@@ -39,22 +33,19 @@
                             <!-- Large modal -->
                             <div class="distance-button"></div>
                             <center>
-                                <h1 id="1_choose"><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="pe-7s-photo"></i></a></h1>
-                                
-                                <p id="2_choose">Choose Picture</p>
-                                <div class="col-md-6 add-description">
-                                    <div id="ready_image" class="hidden">
-                                    </div>
-                                </div>
-                                
-
-                            </center>
-                                <div class="col-md-6 add-description">
-                                    <div class="row">
-
-                                    </div>
-                                </div>
+                            <h1 id="1_choose"><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="pe-7s-photo"></i></a></h1>
                             
+                            <p id="2_choose">Choose Picture</p>
+                            <div class="col-md-6 add-description">
+                                <div id="ready_image" class="hidden">
+                                </div>
+                            </div>
+                            </center>
+                            <div class="col-md-6 add-description">
+                                <div class="row">
+
+                                </div>
+                            </div>
                             <div class="distance-button"></div>
 
                             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -87,69 +78,67 @@
                                 <div class="distance-button"></div>
                                 <center>Available Pictures</center>
                                     <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image1">
-                                                <a data-dismiss="modal" aria-label="Close"> <img src="/img/def_feat_pic.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/1.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/2.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/3.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/4.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/5.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/6.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/7.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/8.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/9.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/10.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/11.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/12.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/13.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/14.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/15.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/16.jpg" width="166" /></a>
-                                            </label>
-                                            <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
-                                                <a data-dismiss="modal" aria-label="Close"><img src="/img/17.jpg" width="166" /></a>
-                                            </label>
-                                        </div>
-
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image1">
+                                            <a data-dismiss="modal" aria-label="Close"> <img src="/img/def_feat_pic.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/1.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/2.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/3.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/4.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/5.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/6.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/7.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/8.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/9.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/10.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/11.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/12.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/13.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/14.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/15.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/16.jpg" width="166" /></a>
+                                        </label>
+                                        <label class="btn btn-default image-toggler-quotes" data-image-id="#image2">
+                                            <a data-dismiss="modal" aria-label="Close"><img src="/img/17.jpg" width="166" /></a>
+                                        </label>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-
-                            <a class="btn btn-primary btn-cancel hidden">Change Picture</a>
-                            <button id="readyNext" class="btn btn-default nextBtn 1_next col-xs-3 pull-right" disabled="disabled" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
                         </div>
+                        <a class="btn btn-primary btn-cancel hidden">Change Picture</a>
+                        <button id="readyNext" class="btn btn-default nextBtn 1_next col-xs-3 pull-right" disabled="disabled" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                    </div>
                     </div>
                     <!-- Wizard STEP 1 END -->
                     
@@ -188,40 +177,38 @@
                                 margin-top: 7px;
                             }
                         </style>
-                            <!--  -->
                             <div id="player">&nbsp;</div> 
                             <input id="example" name="example" placeholder="0 - 100" type="number" min="0" max="100" step="1" value="0" data-color="#6324B5" data-decimals="0" class="bubble-slider">
-                            
                             <div id="place_pic">
                                 <h2 class="h2-custom-picture"><span></span></h2>
                             </div>
                             <br />
                             <nav class="navbar navbar-default">
-                              <div class="container-fluid">
+                                <div class="container-fluid">
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
-                                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                  </button>
-                                  <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-default active">
-                                    <input type="checkbox" autocomplete="off" checked><i class="fa fa-bold"></i>
-                                    </label>
-                                    <label class="btn btn-default">
-                                    <input type="checkbox" autocomplete="off"> <i class="fa fa-italic"></i>
-                                    </label>
-                                    <label class="btn btn-default">
-                                    <input type="checkbox" autocomplete="off"> <i class="fa fa-underline"></i>
-                                    </label>
-                                </div>
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default active">
+                                            <input type="checkbox" autocomplete="off" checked><i class="fa fa-bold"></i>
+                                        </label>
+                                        <label class="btn btn-default">
+                                            <input type="checkbox" autocomplete="off"> <i class="fa fa-italic"></i>
+                                        </label>
+                                        <label class="btn btn-default">
+                                            <input type="checkbox" autocomplete="off"> <i class="fa fa-underline"></i>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                  <ul class="nav navbar-nav">
+                                    <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <select class="form-control">
                                             <option>Times New Roman</option>
@@ -231,8 +218,8 @@
                                             <option>Times New Roman</option>
                                         </select>
                                     </li>
-                                  </ul>
-                                  <ul class="nav navbar-nav">
+                                    </ul>
+                                    <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <select class="form-control">
                                             <option>12</option>
@@ -242,8 +229,8 @@
                                             <option>30</option>
                                         </select>
                                     </li>
-                                  </ul>
-                                  <ul class="nav navbar-nav">
+                                    </ul>
+                                    <ul class="nav navbar-nav">
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-default active">
                                             <input type="radio" autocomplete="off" checked><i class="fa fa-align-left"></i>
@@ -258,8 +245,8 @@
                                             <input type="radio" autocomplete="off"> <i class="fa fa-align-justify"></i>
                                         </label>
                                     </div>
-                                  </ul>
-                                  <ul class="nav navbar-nav">
+                                    </ul>
+                                    <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <select class="form-control">
                                             <option>Background Effect</option>
@@ -269,17 +256,14 @@
                                             <option>Times New Roman</option>
                                         </select>
                                     </li>
-                                  </ul>
+                                    </ul>
                                 </div><!-- /.navbar-collapse -->
                               </div><!-- /.container-fluid -->
                             </nav>
                                 
-
-                                
                             <textarea id="addtext" class="form-control" placeholder="Type Your Qoute Here" rows="7"></textarea>
-                            
                             <br />
-                            <button class="btn btn-default nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                            <button class="btn btn-default nextBtn col-xs-3 pull-right" type="button" >Next Step and finish <i class="fa fa-angle-double-right"></i> </button>
                         </div>
                     </div>
                     <!-- Wizard STEP 2 END -->
@@ -294,7 +278,7 @@
                     <!-- Wizard STEP 3 END -->
                 </fieldset><!-- form contents END -->
 
-                    <br />
+                <br />
                 </div>
             </div>
         </div>
