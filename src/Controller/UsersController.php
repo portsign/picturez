@@ -86,7 +86,8 @@ class UsersController extends AppController
 	    }
     }
 
-	public function googleLogin() {
+	public function googleLogin() 
+    {
 	    // GoogleのOAuth設定で生成された値
 	    $client_id = '487749713247-hci8p168bpnpumkm9hk5qea8p4r6mkvc.apps.googleusercontent.com';
 	    // コールバックURL
@@ -110,7 +111,8 @@ class UsersController extends AppController
 	 *  Google+ callback
 	 *
 	 */
-	public function googleCallback() {
+	public function googleCallback() 
+    {
 	    // GoogleのOAuth設定で生成された値
 	    $client_id = '487749713247-hci8p168bpnpumkm9hk5qea8p4r6mkvc.apps.googleusercontent.com';
 	    $client_secret = 'NyMD--BPiUSpaOpVLBL_NI6X';
@@ -153,8 +155,8 @@ class UsersController extends AppController
 
 	public function timeline()
     {
-
     }
+
 	public function account($id=null)
     {
 		$id = $this->request->session()->read(['Auth', 'User', 'id']);
@@ -179,6 +181,7 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
+
     public function view()
     {
         $username = $this->request->params['username'];
@@ -193,10 +196,11 @@ class UsersController extends AppController
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
+
     public function noaccount()
     {
-
     }
+
     /**
      * Add method
      *
@@ -220,13 +224,13 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
+
 	public function success()
     {
-
     }
+
 	public function home()
     {
-
     }
 
     /**

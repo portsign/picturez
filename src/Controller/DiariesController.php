@@ -104,10 +104,10 @@ class DiariesController extends AppController
 
         $this->set(compact('diary'));
         $this->set('_serialize', ['diary']);
-
     }
 
-    public function ajaxSaveDiary() {
+    public function ajaxSaveDiary() 
+    {
         $json = ['status' => 'error'];
 
         $id_user = $this->request->session()->read(['Auth','User','id']);

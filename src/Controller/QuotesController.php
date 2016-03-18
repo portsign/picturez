@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\QuotesTable $Quotes
  */
-class QuotesController extends AppController
+class QuotesController extends AppController 
 {
 
     /**

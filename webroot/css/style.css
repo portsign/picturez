@@ -636,5 +636,30 @@ textarea.form-control {
     padding: 10px;
 }
 
+.bold_action {
+    font-weight: bold;
+}
+.italic_action {
+    font-style: italic;
+}
+.underline_action {
+    text-decoration: underline;
+}
 
-
+.leftside {
+    left: 0px;
+    text-align: left;
+}
+.centers {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    text-align: center;
+}
+.rightside {
+    right: 0px;
+    text-align: right;
+}
+.justiffy {
+    text-align: justify;
+}
